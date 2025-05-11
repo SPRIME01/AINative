@@ -3,7 +3,9 @@
 Projects within this system are designed to be collaborative and managed by AI, drawing inspiration from Claude-like project functionalities.
 
 ## Key Features:
-
+-  **Project Creation:**
+    -   Users can create projects/cases, which are essentially containers for various chats, tasks, objectives, and cognitive artifacts.
+    -   Each project can have its own project brief/scope (set of goals, strategies, key results, etc).
 -   **Dedicated Project Manager AI Agent:**
     -   Each project has a dedicated "project manager AI agent."
     -   This agent is responsible for managing the project, overseeing other project agents (team members), and providing recommendations.
