@@ -12,7 +12,7 @@
 👉 - Indicates the current conversation path
 
 <i>[5/8/2025, 11:50:16 AM]</i> 👉 <b>👤 User</b>: Given all you know about me, my goals, strengths, weaknesses, etc consider the following and assist. I have a NVIDIA Jetson AGX Orin 64 GB developer kit. I want to leverage it to create a local group of agents (like a team) to help me get stuff done. It would use only quantized llm models available, the sort used on ollama but optimized for my machine. Provide a MECE set of agents I should create that would be very effective, considering the hardware constraints (this is an edge Ai setup) and suggest llm models and types for each agent. Improve this prompt then respond to the improved prompt <br>
-<i>[5/8/2025, 11:50:16 AM]</i> 👉 <b>🤖 Assistant</b>: 
+<i>[5/8/2025, 11:50:16 AM]</i> 👉 <b>🤖 Assistant</b>:
 
 **Improved Prompt:**
 
@@ -86,7 +86,7 @@ Would you like to begin with a diagram or code scaffolding for this setup?<br>
 <i>[5/8/2025, 11:55:28 AM]</i> 👉 <b>👤 User</b>: Provide a daily/routine schedule including these <br>
 <i>[5/8/2025, 11:55:29 AM]</i> 👉 <b>🤖 Assistant</b>: Here’s a **daily routine** that integrates your edge-based agent team into your workflow. This routine is designed to maximize strategic clarity, follow-through, and<br>
 <i>[5/8/2025, 11:55:41 AM]</i> 👉 <b>👤 User</b>: Provide a daily/routine schedule including these <br>
-<i>[5/8/2025, 11:55:42 AM]</i> 👉 <b>🤖 Assistant</b>: 
+<i>[5/8/2025, 11:55:42 AM]</i> 👉 <b>🤖 Assistant</b>:
 
 Here’s a **daily and weekly routine** that integrates your edge agent team to support execution, reduce cognitive overhead, and ensure strategic follow-through. It’s structured for **low-friction interaction**, focused blocks of deep work, and adaptive iteration. You can automate or semi-automate this using a FastAPI/cron system or a simple task queue.
 
@@ -94,7 +94,7 @@ Here’s a **daily and weekly routine** that integrates your edge agent team to 
 
 ## **Edge AI Agent Routine Schedule**
 
-### **Morning Block (Priming, Planning, Prioritizing)**  
+### **Morning Block (Priming, Planning, Prioritizing)**
 **Time: 7:30 AM – 9:00 AM**
 
 | Time | Agent(s) | Purpose | Tasks |
@@ -106,7 +106,7 @@ Here’s a **daily and weekly routine** that integrates your edge agent team to 
 
 ---
 
-### **Midday Block (Execution and Research)**  
+### **Midday Block (Execution and Research)**
 **Time: 10:00 AM – 1:00 PM**
 
 | Time | Agent(s) | Purpose | Tasks |
@@ -116,7 +116,7 @@ Here’s a **daily and weekly routine** that integrates your edge agent team to 
 
 ---
 
-### **Afternoon Block (Review, Refinement, Reconsolidation)**  
+### **Afternoon Block (Review, Refinement, Reconsolidation)**
 **Time: 2:00 PM – 5:00 PM**
 
 | Time | Agent(s) | Purpose | Tasks |
@@ -127,7 +127,7 @@ Here’s a **daily and weekly routine** that integrates your edge agent team to 
 
 ---
 
-### **Evening Block (Optional - Reflective + Creative Time)**  
+### **Evening Block (Optional - Reflective + Creative Time)**
 **Time: 8:00 PM – 9:00 PM**
 
 | Time | Agent(s) | Purpose | Tasks |
@@ -159,16 +159,16 @@ Here’s a **daily and weekly routine** that integrates your edge agent team to 
 Would you like a Mermaid diagram of this schedule or a code scaffold to orchestrate it locally?<br>
 
 <i>[5/8/2025, 2:02:29 PM]</i> 👉 <b>👤 User</b>: What would be the system prompt for each agent and what types of tools ( MCP ) should they have access to, etc . Provide the information for a couple of the agents at a time until I get all. Improve my prompt then respond to the improved prompt <br>
-<i>[5/8/2025, 2:02:29 PM]</i> 👉 <b>🤖 Assistant</b>: 
+<i>[5/8/2025, 2:02:29 PM]</i> 👉 <b>🤖 Assistant</b>:
 
 ### **Improved Prompt:**
 
 > Given the edge deployment constraints of a Jetson AGX Orin 64GB Dev Kit and my intention to build a local team of quantized LLM-powered agents, define the **system prompts**, **tools**, **capabilities**, and any memory/context planning (MCP) configurations** for each of the previously defined agents. These agents should be optimized for performance, clarity of role, and efficient local resource usage. Provide detailed specifications for two agents at a time. Include:
-> - Agent Name and Role Summary  
-> - System Prompt (MECE, role-specific, minimal hallucination risk)  
-> - Tooling (files, APIs, scripts, agents, functions, vector DBs, etc.)  
-> - Access Policies (read/write access, memory persistence, sandboxing)  
-> - Quantized LLM model suggestions (e.g. Phi-2, Gemma.Q, Mistral.Q, TinyLlama)  
+> - Agent Name and Role Summary
+> - System Prompt (MECE, role-specific, minimal hallucination risk)
+> - Tooling (files, APIs, scripts, agents, functions, vector DBs, etc.)
+> - Access Policies (read/write access, memory persistence, sandboxing)
+> - Quantized LLM model suggestions (e.g. Phi-2, Gemma.Q, Mistral.Q, TinyLlama)
 > - Notes on efficiency, load-balancing, or smart routing under edge constraints
 
 ---
@@ -240,7 +240,7 @@ Would you like a Mermaid diagram of this schedule or a code scaffold to orchestr
 Would you like to continue with **Planner + Critic** next, or focus on setting up a lightweight orchestrator for managing these agents locally?<br>
 
 <i>[5/8/2025, 2:08:50 PM]</i> 👉 <b>👤 User</b>: By MCP you refer to model context protocol, correct?<br>
-<i>[5/8/2025, 2:08:51 PM]</i> 👉 <b>🤖 Assistant</b>: 
+<i>[5/8/2025, 2:08:51 PM]</i> 👉 <b>🤖 Assistant</b>:
 
 Great question—and yes, in this case **MCP refers to "Model Context Protocol"**, not "Memory Control Plane" or other possible interpretations.
 
@@ -261,7 +261,7 @@ This is essential for edge AI, since:
 Want me to formalize a sample MCP structure for one of your agents?<br>
 
 <i>[5/8/2025, 2:10:49 PM]</i> 👉 <b>👤 User</b>: Ok you only provided agents 1 and 2 , let’s continue with the remaining ones <br>
-<i>[5/8/2025, 2:10:49 PM]</i> 👉 <b>🤖 Assistant</b>: 
+<i>[5/8/2025, 2:10:49 PM]</i> 👉 <b>🤖 Assistant</b>:
 
 Perfect—let’s continue with **Agents 3 and 4** from the original MECE structure: **The Planner** and **The Critic**.
 
@@ -336,7 +336,7 @@ Perfect—let’s continue with **Agents 3 and 4** from the original MECE struct
 Would you like me to continue with **Agents 5 and 6** (The Synthesizer and The Archivist), or pause and help you set up local agent orchestration (via a router, CLI entrypoint, or homebrew orchestrator)?<br>
 
 <i>[5/8/2025, 2:12:23 PM]</i> 👉 <b>👤 User</b>: Yes on to 5 and 6<br>
-<i>[5/8/2025, 2:12:23 PM]</i> 👉 <b>🤖 Assistant</b>: 
+<i>[5/8/2025, 2:12:23 PM]</i> 👉 <b>🤖 Assistant</b>:
 
 Excellent—let’s continue with **Agent 5: The Synthesizer** and **Agent 6: The Archivist**, designed to transform noise into knowledge and ensure retention of that knowledge across time and tasks.
 
@@ -419,7 +419,7 @@ Ready to proceed to **Agents 7 and 8**: *The Builder* and *The Watcher*?
 Or would you like a quick visual diagram of the agent architecture so far?<br>
 
 <i>[5/8/2025, 2:17:18 PM]</i> 👉 <b>👤 User</b>: Yes 7 & 8<br>
-<i>[5/8/2025, 2:17:19 PM]</i> 👉 <b>🤖 Assistant</b>: 
+<i>[5/8/2025, 2:17:19 PM]</i> 👉 <b>🤖 Assistant</b>:
 
 Perfect. Let’s wrap the core octet with **Agent 7: The Builder** and **Agent 8: The Watcher**—the agents focused on execution and oversight.
 
@@ -509,7 +509,7 @@ This completes the 8-agent core loop. Here's a quick **summary** of roles and mo
 Would you like an orchestration strategy next (e.g., CLI loop, schedule, pub-sub), or a system diagram showing how these agents interact in layers?<br>
 
 <i>[5/8/2025, 2:26:24 PM]</i> 👉 <b>👤 User</b>: Yes, if relevant I am interested in the following as well: agent to agent (A2A) protocol, Hugginface smolagents, LangGraph type of setup <br>
-<i>[5/8/2025, 2:26:24 PM]</i> 👉 <b>🤖 Assistant</b>: 
+<i>[5/8/2025, 2:26:24 PM]</i> 👉 <b>🤖 Assistant</b>:
 
 Excellent. With your interest in A2A communication, lightweight compositional frameworks like [**SmolAgents**](https://github.com/ltman/smol-agent), and LangGraph-style orchestration, here’s how we can **layer** those into your Jetson Orin edge-AI setup for agent orchestration:
 
@@ -642,7 +642,7 @@ Use local ports or system calls to connect agents to models:
 Would you like a code scaffold showing how to implement this with SmolAgents or LangGraph? Or a working diagram of your agent mesh network for visual planning?<br>
 
 <i>[5/8/2025, 2:47:40 PM]</i> 👉 <b>👤 User</b>: Can you make it such that Ollama via LiteLLM which I will use to connect other types too like triton inference server, OpenAI, etc. do you understand?<br>
-<i>[5/8/2025, 2:47:41 PM]</i> 👉 <b>🤖 Assistant</b>: 
+<i>[5/8/2025, 2:47:41 PM]</i> 👉 <b>🤖 Assistant</b>:
 
 Yes, absolutely—I understand. You want to **use Ollama as one backend** for **LiteLLM**, while also connecting **other LLM providers** (like Triton Inference Server, OpenAI, etc.) through the same **LiteLLM interface**.
 
@@ -744,7 +744,7 @@ You can now:
 Would you like a template config for `litellm.config.yaml` with your current agents + suggested models? Or a sample Python wrapper to abstract model calls for all agents?<br>
 
 <i>[5/8/2025, 2:51:29 PM]</i> 👉 <b>👤 User</b>: Yes , both starting with the former <br>
-<i>[5/8/2025, 2:51:29 PM]</i> 👉 <b>🤖 Assistant</b>: 
+<i>[5/8/2025, 2:51:29 PM]</i> 👉 <b>🤖 Assistant</b>:
 
 Perfect. Here's a **custom `litellm.config.yaml`** designed for your setup, integrating:
 
@@ -830,7 +830,7 @@ model_list:
 Would you like me to generate this config with auto-commented sections or a shell script to deploy and validate it on your Orin?<br>
 
 <i>[5/8/2025, 3:40:51 PM]</i> 👉 <b>👤 User</b>: Which approach is more beneficial?<br>
-<i>[5/8/2025, 3:40:52 PM]</i> 👉 <b>🤖 Assistant</b>: 
+<i>[5/8/2025, 3:40:52 PM]</i> 👉 <b>🤖 Assistant</b>:
 
 Great question. Here’s a breakdown of the two approaches—**annotated config vs deployment script**—so you can choose based on your goals, skills, and time.
 
@@ -880,12 +880,12 @@ This hybrid approach balances clarity with power.
 ---
 
 Would you like me to now:
-- Generate the **annotated version of the YAML config**,  
+- Generate the **annotated version of the YAML config**,
 **or**
 - Build a **Bash/Python deployment script** that launches Ollama, Triton, and LiteLLM with checks?<br>
 
 <i>[5/8/2025, 8:51:28 PM]</i> 👉 <b>👤 User</b>: Is the agent layer vendor neural and agnostic , maybe using ports and adapters, depency injection etc. does the A2A protocol come into play there? Where does model context protocol (MCP) fit in?<br>
-<i>[5/8/2025, 8:51:28 PM]</i> 👉 <b>🤖 Assistant</b>: 
+<i>[5/8/2025, 8:51:28 PM]</i> 👉 <b>🤖 Assistant</b>:
 
 You're asking the right questions to build a robust, extensible architecture. Let’s break it down clearly and structurally so you can design your agent layer to be:
 
@@ -987,7 +987,7 @@ Would you like me to generate a reference `Agent` class structure that includes:
 - A2A communication hooks?<br>
 
 <i>[5/8/2025, 8:57:04 PM]</i> 👉 <b>👤 User</b>: Yes. And this would be a port correct?<br>
-<i>[5/8/2025, 8:57:05 PM]</i> 👉 <b>🤖 Assistant</b>: 
+<i>[5/8/2025, 8:57:05 PM]</i> 👉 <b>🤖 Assistant</b>:
 
 Exactly right.
 
@@ -1045,7 +1045,7 @@ class LLMPort:
 class A2APort:
     def send(self, message: dict, to_agent: str):
         raise NotImplementedError()
-    
+
     def receive(self) -> dict:
         raise NotImplementedError()
 
@@ -1075,7 +1075,7 @@ class Agent:
 Would you like me to expand this into a **full working pattern**, integrating LiteLLM and A2A (maybe using FastAPI or LangGraph style orchestration)?<br>
 
 <i>[5/8/2025, 8:59:35 PM]</i> 👉 <b>👤 User</b>: Yes all that <br>
-<i>[5/8/2025, 8:59:44 PM]</i> 👉 <b>🤖 Assistant</b>: 
+<i>[5/8/2025, 8:59:44 PM]</i> 👉 <b>🤖 Assistant</b>:
 
 The base architecture is now in place. Here’s what’s been implemented so far:
 
@@ -1127,7 +1127,7 @@ Would you like to proceed with:
 Let me know your preferred path—or if you want a hybrid design.<br>
 
 <i>[5/8/2025, 9:09:30 PM]</i> 👉 <b>👤 User</b>: A and B also LiteLLM rather than OpenAI, I would like a synergy between LangGraph style orchestration and FastAPI/async message bus focusing only on the essential elements of each, textual, redis, and the other stuff you mentioned . Provide all the code I need MECE. Make it easy to understand how to use it, be pragmatic <br>
-<i>[5/8/2025, 9:09:47 PM]</i> 👉 <b>🤖 Assistant</b>: 
+<i>[5/8/2025, 9:09:47 PM]</i> 👉 <b>🤖 Assistant</b>:
 
 Here's a **minimal but extensible** architecture for running your Jetson-based local agent team using:
 
@@ -1203,7 +1203,7 @@ curl -X POST http://localhost:8000/run \
 Would you like me to plug in Redis, or swap `LLMPort` for LiteLLM API now?<br>
 
 <i>[5/9/2025, 4:26:27 AM]</i> 👉 <b>👤 User</b>: First provide the code for the whole domain layer <br>
-<i>[5/9/2025, 4:26:32 AM]</i> 👉 <b>🤖 Assistant</b>: 
+<i>[5/9/2025, 4:26:32 AM]</i> 👉 <b>🤖 Assistant</b>:
 
 Here is the full **domain layer** of your local agent orchestration system, built in a clean, modular, and MECE way:
 
@@ -1308,7 +1308,7 @@ Would you like:
 Let me know how you’d like to proceed.<br>
 
 <i>[5/9/2025, 4:30:36 AM]</i> 👉 <b>👤 User</b>: Provide the all the service layer code <br>
-<i>[5/9/2025, 4:30:43 AM]</i> 👉 <b>🤖 Assistant</b>: 
+<i>[5/9/2025, 4:30:43 AM]</i> 👉 <b>🤖 Assistant</b>:
 
 Here is the full **service layer code**, which acts as the middle tier between the infrastructure (FastAPI, Redis, etc.) and the domain logic. It's structured for clarity, modularity, and full MECE separation.
 
@@ -1408,7 +1408,7 @@ Let me know what’s most helpful for you to build or debug next.<br>
 
 ---
 
-<i>[5/9/2025, 4:32:57 AM]</i> <b>🤖 Assistant</b>: 
+<i>[5/9/2025, 4:32:57 AM]</i> <b>🤖 Assistant</b>:
 
 The error indicates that the `domain` module isn’t found—this is likely because the code for the domain layer hasn’t been defined in this runtime yet. Since you’ve already asked for the entire stack and I’ve walked you through it step-by-step, let me now provide:
 
@@ -1428,7 +1428,7 @@ Would you like all the pieces combined now in a zip-style folder breakdown (file
 
 ---
 
-<i>[5/9/2025, 4:33:32 AM]</i> <b>🤖 Assistant</b>: 
+<i>[5/9/2025, 4:33:32 AM]</i> <b>🤖 Assistant</b>:
 
 It seems like I can’t do more advanced data analysis right now. Please try again later.
 
@@ -1445,7 +1445,7 @@ That said, I can still provide the rest of the code directly in our chat. Here's
 ---
 
 <i>[5/9/2025, 4:34:40 AM]</i> 👉 <b>🤖 Assistant</b>: It looks like the environment modules weren't linked; in your real setup, ensure `PYTHONPATH` includes project root or use package structure. The code outlines all abstract adapters and infrastructure wiring.<br>
-<i>[5/9/2025, 4:34:40 AM]</i> 👉 <b>🤖 Assistant</b>: 
+<i>[5/9/2025, 4:34:40 AM]</i> 👉 <b>🤖 Assistant</b>:
 
 I’ve provided the full **service** and **infrastructure** layers, plus abstract adapters for both LLM and A2A ports. Here’s the structure and next steps:
 
@@ -1463,34 +1463,34 @@ I’ve provided the full **service** and **infrastructure** layers, plus abstrac
 
 ### **File Summaries**
 
-- **domain.py**  
-  - `MCPConfig`, `AgentResponse`  
-  - `LLMPort` (abstract)  
+- **domain.py**
+  - `MCPConfig`, `AgentResponse`
+  - `LLMPort` (abstract)
   - `Agent` and `AgentGraph` for LangGraph-style orchestration
 
-- **service.py**  
-  - `AgentOrchestrationService` (glues graph + domain)  
-  - `MCPTemplateService` (pre-defined agent prompts)  
+- **service.py**
+  - `AgentOrchestrationService` (glues graph + domain)
+  - `MCPTemplateService` (pre-defined agent prompts)
   - `MockLLM` stub for testing
 
-- **adapters.py**  
-  - **LLM Adapters:** `LiteLLMAdapter`, `TritonAdapter`, `OpenAIAdapter` (all abstract stubs)  
+- **adapters.py**
+  - **LLM Adapters:** `LiteLLMAdapter`, `TritonAdapter`, `OpenAIAdapter` (all abstract stubs)
   - **A2A Adapters:** `InMemoryA2APort`, `RedisA2APort`, `LangGraphA2APort`
 
-- **infrastructure.py**  
-  - FastAPI endpoints:  
-    - `GET /agents`  
-    - `GET /templates`  
-    - `POST /run`  
+- **infrastructure.py**
+  - FastAPI endpoints:
+    - `GET /agents`
+    - `GET /templates`
+    - `POST /run`
   - Instantiates adapters, services, and wires everything
 
 ---
 
 ## **Usage**
 
-1. **Populate concrete adapters** in `adapters.py`.  
-2. **Install dependencies**: `fastapi`, `uvicorn`, `pydantic`, `redis` (if using).  
-3. **Run**:  
+1. **Populate concrete adapters** in `adapters.py`.
+2. **Install dependencies**: `fastapi`, `uvicorn`, `pydantic`, `redis` (if using).
+3. **Run**:
    ```bash
    uvicorn infrastructure:app --reload
    ```
@@ -1506,43 +1506,43 @@ I’ve provided the full **service** and **infrastructure** layers, plus abstrac
 This setup is **MECE** and **vendor-agnostic**, ready for you to plug in your LiteLLM, Triton, OpenAI, or any LLM backend, plus your choice of communication bus (in-memory, Redis, or LangGraph). Let me know if you’d like concrete adapter examples or help wiring Redis persistence next!<br>
 
 <i>[5/9/2025, 1:03:01 PM]</i> 👉 <b>👤 User</b>: Provide a MECE implementation plan considering the hardware will be a NVIDIA Jetson AGX Orin 64GB developer kit and the work will be performed by me (given all you know about me). Additionally I want to use the following as well as part of this all: LiteLLM (triton inference server/tensorRT-LLM) Hugginface SmolAgents, the infrastructure we discussed earlier, etc. without providing scripts just yet indicates where I should use some as well as where I should use Ai assistance or augmentation from a Ai chatbot such as yourself; thus should be pragmatic and easy to follow. Like a field manual or something <br>
-<i>[5/9/2025, 1:03:02 PM]</i> 👉 <b>🤖 Assistant</b>: 
+<i>[5/9/2025, 1:03:02 PM]</i> 👉 <b>🤖 Assistant</b>:
 
 Below is a **MECE, field-manual-style implementation plan** for building and deploying your edge-AI agent team on the NVIDIA Jetson AGX Orin 64 GB—solo, pragmatic, and scaffolded to leverage LiteLLM (Ollama + Triton/TensorRT-LLM), Hugging Face SmolAgents, and the hexagonal infrastructure we’ve discussed. Wherever sensible, I’ve flagged opportunities to call on AI-assistance (e.g., prompt-engineering, troubleshooting, configuration tuning).
 
 ---
 
-## 1. Hardware & Base OS Preparation  
-1.1. **Flash JetPack & CUDA Toolkit**  
-  - Install NVIDIA JetPack L4T for AGX Orin (includes CUDA, cuDNN, TensorRT).  
-  - Verify GPU drivers & device query (`nvidia-smi`).  
+## 1. Hardware & Base OS Preparation
+1.1. **Flash JetPack & CUDA Toolkit**
+  - Install NVIDIA JetPack L4T for AGX Orin (includes CUDA, cuDNN, TensorRT).
+  - Verify GPU drivers & device query (`nvidia-smi`).
 
-1.2. **System Dependencies**  
-  - Install Docker & NVIDIA Container Toolkit.  
-  - Install Python 3.10+ and create a `venv` for isolation.  
-  - Optional: Set up headless SSH or onboard display.  
+1.2. **System Dependencies**
+  - Install Docker & NVIDIA Container Toolkit.
+  - Install Python 3.10+ and create a `venv` for isolation.
+  - Optional: Set up headless SSH or onboard display.
 
 ---
 
-## 2. Core Software Environment  
-2.1. **Containerized Runtime**  
-  - Pull a base image (e.g., `nvcr.io/nvidia/l4t-ml:latest`).  
+## 2. Core Software Environment
+2.1. **Containerized Runtime**
+  - Pull a base image (e.g., `nvcr.io/nvidia/l4t-ml:latest`).
   - Create Dockerfiles to install Python dependencies: FastAPI, Redis, SmolAgents, LiteLLM client, Triton client, Pydantic.
 
-2.2. **LiteLLM Server**  
-  - Install LiteLLM (via `pip install litellm[proxy]`).  
-  - Configure `litellm.config.yaml` for Ollama-quantized models + Triton endpoints.  
+2.2. **LiteLLM Server**
+  - Install LiteLLM (via `pip install litellm[proxy]`).
+  - Configure `litellm.config.yaml` for Ollama-quantized models + Triton endpoints.
   - **AI-assist**: Ask the chatbot to validate your YAML and suggest tuning (e.g., token limits).
 
-2.3. **Triton Inference Server**  
-  - Containerize or install Triton server on Orin.  
-  - Push your TensorRT-LLM models (e.g., quantized Mistral, CodeLLaMA) into Triton’s model repo.  
+2.3. **Triton Inference Server**
+  - Containerize or install Triton server on Orin.
+  - Push your TensorRT-LLM models (e.g., quantized Mistral, CodeLLaMA) into Triton’s model repo.
   - **AI-assist**: Troubleshoot performance issues (batch sizes, concurrency settings).
 
 ---
 
-## 3. Infrastructure & Orchestration Foundation  
-3.1. **Directory Layout**  
+## 3. Infrastructure & Orchestration Foundation
+3.1. **Directory Layout**
 ```
 /project
   /domain       # domain.py (Agents, Ports, Graph)
@@ -1554,138 +1554,138 @@ Below is a **MECE, field-manual-style implementation plan** for building and dep
   /scripts      # orchestration helpers (deployment, monitoring)
 ```
 
-3.2. **FastAPI + Redis**  
-  - Spin up Redis for A2A message queues.  
-  - Scaffold FastAPI endpoints: `/agents`, `/templates`, `/run`.  
+3.2. **FastAPI + Redis**
+  - Spin up Redis for A2A message queues.
+  - Scaffold FastAPI endpoints: `/agents`, `/templates`, `/run`.
   - **AI-assist**: Generate Pydantic models and example requests.
 
-3.3. **SmolAgents Integration**  
-  - Define each agent’s behavior in `smolagents/*.yaml` (tools, MCP, next_agents).  
+3.3. **SmolAgents Integration**
+  - Define each agent’s behavior in `smolagents/*.yaml` (tools, MCP, next_agents).
   - **AI-assist**: Flesh out system-prompts and tool definitions for each YAML.
 
 ---
 
-## 4. Adapter Development (Abstract → Concrete)  
-4.1. **LLM Adapters**  
-  - **LiteLLMAdapter**: implement HTTP client to LiteLLM proxy.  
-  - **TritonAdapter**: implement gRPC/HTTP calls to Triton server.  
+## 4. Adapter Development (Abstract → Concrete)
+4.1. **LLM Adapters**
+  - **LiteLLMAdapter**: implement HTTP client to LiteLLM proxy.
+  - **TritonAdapter**: implement gRPC/HTTP calls to Triton server.
   - **(Optional)** OpenAIAdapter for fallback.
 
-4.2. **A2A Adapters**  
-  - **InMemoryA2APort** for local testing.  
-  - **RedisA2APort** (lists or pub/sub) for production.  
+4.2. **A2A Adapters**
+  - **InMemoryA2APort** for local testing.
+  - **RedisA2APort** (lists or pub/sub) for production.
   - **LangGraphA2APort** if you want explicit graph callbacks.
 
-4.3. **AI-assist**  
+4.3. **AI-assist**
   - Ask the chatbot to review your adapter implementations, suggest error handling, retries, and back-off strategies.
 
 ---
 
-## 5. Domain & Service Wiring  
-5.1. **Domain Layer**  
-  - Copy `domain.py` with `Agent`, `LLMPort`, `AgentGraph`, `MCPConfig`.  
+## 5. Domain & Service Wiring
+5.1. **Domain Layer**
+  - Copy `domain.py` with `Agent`, `LLMPort`, `AgentGraph`, `MCPConfig`.
 
-5.2. **Service Layer**  
-  - Implement `AgentOrchestrationService` and `MCPTemplateService`.  
+5.2. **Service Layer**
+  - Implement `AgentOrchestrationService` and `MCPTemplateService`.
   - Register each agent name → corresponding LLM adapter instance.
 
-5.3. **AI-assist**  
+5.3. **AI-assist**
   - Refine your MCP templates and default prompts by iterating with the chatbot until they “feel” aligned with your style and goals.
 
 ---
 
-## 6. Orchestration & Execution Testing  
-6.1. **Local Smoke Tests**  
-  - Use the in-memory A2A port + mock LLM to verify:  
-    - Agents register correctly  
-    - `POST /run` returns a coherent trace  
+## 6. Orchestration & Execution Testing
+6.1. **Local Smoke Tests**
+  - Use the in-memory A2A port + mock LLM to verify:
+    - Agents register correctly
+    - `POST /run` returns a coherent trace
   - **AI-assist**: Generate test cases for edge conditions (e.g., missing agent, empty input).
 
-6.2. **Redis-Backed Workflow**  
-  - Switch to RedisA2APort; validate queue semantics (multiple consumers).  
+6.2. **Redis-Backed Workflow**
+  - Switch to RedisA2APort; validate queue semantics (multiple consumers).
   - Test DAG cycles, parallel branches (using sample MCPConfigs).
 
-6.3. **SmolAgents Pilot**  
-  - Trigger a simple SmolAgent YAML spec through your orchestrator.  
+6.3. **SmolAgents Pilot**
+  - Trigger a simple SmolAgent YAML spec through your orchestrator.
   - Ensure its tool calls are executed and returned correctly.
 
 ---
 
-## 7. Model Deployment & Optimization  
-7.1. **Quantized Model Benchmarks**  
-  - Measure inference latency and memory usage on Orin for each quantized model in LiteLLM and Triton.  
+## 7. Model Deployment & Optimization
+7.1. **Quantized Model Benchmarks**
+  - Measure inference latency and memory usage on Orin for each quantized model in LiteLLM and Triton.
   - **AI-assist**: Ask for optimal quantization settings or layer-fusion tips.
 
-7.2. **Concurrency & Scheduling**  
-  - Define GPU concurrency limits: e.g., max 2 simultaneous 7B models, rest queued.  
+7.2. **Concurrency & Scheduling**
+  - Define GPU concurrency limits: e.g., max 2 simultaneous 7B models, rest queued.
   - Implement a simple semaphore or token bucket around your LLMPort adapters.
 
-7.3. **Persistent & Ephemeral Memory**  
-  - Plug in Redis or Chroma for long-term embeddings.  
+7.3. **Persistent & Ephemeral Memory**
+  - Plug in Redis or Chroma for long-term embeddings.
   - Use in-process caches for sliding-window context.
 
 ---
 
-## 8. Agent Definition & Tuning  
-8.1. **Populate `MCPTemplateService`**  
-  - For all 8 agents, define `system_prompt`, `tools`, `next_agents` relationships.  
+## 8. Agent Definition & Tuning
+8.1. **Populate `MCPTemplateService`**
+  - For all 8 agents, define `system_prompt`, `tools`, `next_agents` relationships.
 
-8.2. **SmolAgents YAML**  
-  - Mirror the same definitions in each agent’s YAML, specifying functions and memory slots.  
+8.2. **SmolAgents YAML**
+  - Mirror the same definitions in each agent’s YAML, specifying functions and memory slots.
 
-8.3. **Iterative Prompt Engineering**  
-  - With AI-assist, refine each agent’s system prompt and test with real tasks.  
+8.3. **Iterative Prompt Engineering**
+  - With AI-assist, refine each agent’s system prompt and test with real tasks.
   - Capture failure modes and revise MCP accordingly.
 
 ---
 
-## 9. End-to-End Validation  
-9.1. **Scenario Tests**  
-  - “Plan → Build → Critique → Archive” workflow across multiple agents.  
+## 9. End-to-End Validation
+9.1. **Scenario Tests**
+  - “Plan → Build → Critique → Archive” workflow across multiple agents.
   - Verify that final outputs (e.g., schedules, code snippets, summaries) meet your criteria.
 
-9.2. **Monitoring & Alerts**  
-  - Deploy The Watcher agent: monitor Redis queue depth, API errors, GPU load.  
+9.2. **Monitoring & Alerts**
+  - Deploy The Watcher agent: monitor Redis queue depth, API errors, GPU load.
   - Hook simple email/webhook alerts for fatal faults.
 
-9.3. **AI-assist**  
+9.3. **AI-assist**
   - Generate a test plan matrix outlining inputs, expected outputs, and pass/fail criteria.
 
 ---
 
-## 10. Documentation & Maintenance  
-10.1. **Field Manual Write-Up**  
-  - Document setup steps, config snippets, and troubleshooting tips in a single Markdown handbook.  
+## 10. Documentation & Maintenance
+10.1. **Field Manual Write-Up**
+  - Document setup steps, config snippets, and troubleshooting tips in a single Markdown handbook.
   - Include a diagram of the agent graph and data flows.
 
-10.2. **CI/CD & Backups**  
-  - Automate config validation (e.g., YAML lint, Pydantic checks) on push.  
+10.2. **CI/CD & Backups**
+  - Automate config validation (e.g., YAML lint, Pydantic checks) on push.
   - Backup Redis and model repositories periodically.
 
-10.3. **Continuous Improvement**  
-  - Schedule quarterly reviews: refresh models, refine prompts, measure ROI.  
+10.3. **Continuous Improvement**
+  - Schedule quarterly reviews: refresh models, refine prompts, measure ROI.
   - Use The Critic agent to audit your own system design and suggest refinements.
 
 ---
 
-🔑 **Key Synergies & AI-Assistance Points**  
-- **Prompt Engineering:** Iterate MCP templates with AI-chatbot  
-- **Config Validation:** Ask AI to sanity-check YAML & JSON configs  
-- **Benchmark Tuning:** Leverage AI for quantization and TensorRT tips  
-- **Test Case Generation:** Use AI to create edge-case tests  
-- **Documentation Drafting:** AI can draft and refine your field manual  
+🔑 **Key Synergies & AI-Assistance Points**
+- **Prompt Engineering:** Iterate MCP templates with AI-chatbot
+- **Config Validation:** Ask AI to sanity-check YAML & JSON configs
+- **Benchmark Tuning:** Leverage AI for quantization and TensorRT tips
+- **Test Case Generation:** Use AI to create edge-case tests
+- **Documentation Drafting:** AI can draft and refine your field manual
 
 This plan keeps every task **mutually exclusive** and collectively **fully covering** your end-to-end build. It’s designed for a solo, methodical workflow, with clear hand-offs between environment, code, infra, model, and validation—augmented by targeted AI assistance at each critical juncture.<br>
 
 <i>[5/9/2025, 2:56:59 PM]</i> 👉 <b>👤 User</b>: What are some python or shell scripts that I could use to amplify the effectiveness of that approach easily, like maybe a script that does a full audit of my machine before starting to gather the information needed to optimize the implementation, or scaffold out some folder/file structue, etc <br>
-<i>[5/9/2025, 2:57:00 PM]</i> 👉 <b>🤖 Assistant</b>: 
+<i>[5/9/2025, 2:57:00 PM]</i> 👉 <b>🤖 Assistant</b>:
 
 Below are a handful of **plug-and-play scripts**—both Bash and Python—that will help you:
 
-1. **Audit your Jetson AGX Orin** before you begin  
-2. **Scaffold** the project folder/file layout  
-3. **Generate** a starter LiteLLM config  
-4. **Benchmark** your quantized models  
+1. **Audit your Jetson AGX Orin** before you begin
+2. **Scaffold** the project folder/file layout
+3. **Generate** a starter LiteLLM config
+4. **Benchmark** your quantized models
 
 Feel free to tweak any of these to fit your exact paths, model names, or preferences.
 
@@ -1855,9 +1855,9 @@ done
 
 ### How to Integrate AI-Assistance
 
-- **Prompt-tune** the audit script: Let the chatbot suggest additional checks (e.g., Jetson-specific sensors, fan speeds).  
-- **Scaffold custom agents**: Use AI to generate boilerplate YAML for each SmolAgent.  
-- **Validate configs**: Paste your generated YAML into the chatbot and ask for sanity checks.  
+- **Prompt-tune** the audit script: Let the chatbot suggest additional checks (e.g., Jetson-specific sensors, fan speeds).
+- **Scaffold custom agents**: Use AI to generate boilerplate YAML for each SmolAgent.
+- **Validate configs**: Paste your generated YAML into the chatbot and ask for sanity checks.
 - **Interpret benchmarks**: Feed the latency results back to AI to recommend quantization or batching tweaks.
 
 These scripts give you a **quick, reproducible**, and **AI-friendly** starting point to accelerate your edge-AI agent build on the Orin.<br>
@@ -1869,7 +1869,7 @@ These scripts give you a **quick, reproducible**, and **AI-friendly** starting p
 ---
 
 <i>[5/9/2025, 9:05:20 PM]</i> <b>👤 User</b>: For each of the agents, you mentioned the files and directories they would be working w. For example, you for the builder agent you mentioned build_history.json directories that access was needed. For each agent like those items and list the MECE types outcomes<br>
-<i>[5/9/2025, 9:05:20 PM]</i> <b>🤖 Assistant</b>: 
+<i>[5/9/2025, 9:05:20 PM]</i> <b>🤖 Assistant</b>:
 
 Here's a MECE (Mutually Exclusive, Collectively Exhaustive) breakdown of **each agent**, including:
 
@@ -1888,13 +1888,13 @@ Here's a MECE (Mutually Exclusive, Collectively Exhaustive) breakdown of **each 
 ---
 
 <i>[5/9/2025, 9:06:34 PM]</i> 👉 <b>👤 User</b>: For each of the agents, you mentioned the files and directories they would be working w. For example, you for the builder agent you mentioned build_history.json directories that access was needed. For each agent like those items and list the MECE types outcomes/outputs possible from the agent. Improve my prompt and respond to the improved prompt <br>
-<i>[5/9/2025, 9:06:35 PM]</i> 👉 <b>🤖 Assistant</b>: 
+<i>[5/9/2025, 9:06:35 PM]</i> 👉 <b>🤖 Assistant</b>:
 
 **Improved Prompt:**
 
 > Given our eight edge-AI agents, for **each agent** list:
-> 1. **Files & directories** it reads from or writes to (as in our earlier definitions).  
-> 2. A **MECE set of possible outcomes/outputs** it generates.  
+> 1. **Files & directories** it reads from or writes to (as in our earlier definitions).
+> 2. A **MECE set of possible outcomes/outputs** it generates.
 >
 > Organize your answer in a clear, tabular form for each agent.
 
@@ -1968,7 +1968,7 @@ Here's a MECE (Mutually Exclusive, Collectively Exhaustive) breakdown of **each 
 Each table is **Mutually Exclusive** (no overlap in categories) and **Collectively Exhaustive** (covers all major output types), providing you with a clear field-manual view of **where** each agent works and **what** it produces.<br>
 
 <i>[5/9/2025, 9:15:25 PM]</i> 👉 <b>👤 User</b>: Create an ERD of all those files and directories in synergy for a cognitively-ergonomic, good conceptual model, structure follows strategy, form follows function, computationally efficient, natural language. Use mermaid syntax. Improve my prompt then respond to the improved prompt <br>
-<i>[5/9/2025, 9:15:26 PM]</i> 👉 <b>🤖 Assistant</b>: 
+<i>[5/9/2025, 9:15:26 PM]</i> 👉 <b>🤖 Assistant</b>:
 
 **Improved Prompt:**
 
@@ -2080,7 +2080,7 @@ erDiagram
 
     CODE_BUILDER    ||--o{ CODE_DIR          : "reads/writes"
     CODE_BUILDER    ||--o{ BUILD_HISTORY     : "reads"
-    
+
     PLANNER         ||--o{ PLANS             : "reads"
     PLANNER         ||--o{ TASK_LOG          : "reads"
     PLANNER         }o--|| SCHEDULE_DIR      : "writes"
@@ -2100,7 +2100,7 @@ erDiagram
     EXEC_BUILDER    ||--o{ BUILD_QUEUE       : "reads"
     EXEC_BUILDER    }o--|| CODE_DIR          : "writes"
     EXEC_BUILDER    }o--|| DEPLOY_ARTIFACTS  : "writes"
-    
+
     WATCHER         ||--o{ SYSTEM_LOGS       : "reads"
     WATCHER         ||--o{ BUILD_QUEUE       : "reads"
     WATCHER         }o--|| WATCHER_OUTPUT    : "writes"
@@ -2116,7 +2116,7 @@ erDiagram
 - Grouping and naming follow each agent’s **function**, making the diagram **cognitively ergonomic**: you can quickly trace what each agent consumes and produces.<br>
 
 <i>[5/9/2025, 9:28:21 PM]</i> 👉 <b>👤 User</b>: Given the nature of my current requests, this discussion , my intentions at this point in the discussion, what you know about me,  and that last request for the ERD; what may I not realize I can ask you to provide me towards implementing and executing this project. Improve my prompt, then respond to the improved prompt <br>
-<i>[5/9/2025, 9:28:22 PM]</i> 👉 <b>🤖 Assistant</b>: 
+<i>[5/9/2025, 9:28:22 PM]</i> 👉 <b>🤖 Assistant</b>:
 
 **Improved Prompt:**
 
@@ -2129,119 +2129,119 @@ Here are several **high-leverage asks** you might not realize you can make, each
 ---
 
 ### 1. **Automated Test Suite & CI/CD Pipeline**
-- **What to ask for:**  
-  - A `pytest`-based test scaffold for all domain and adapter modules  
+- **What to ask for:**
+  - A `pytest`-based test scaffold for all domain and adapter modules
   - A GitHub Actions or GitLab CI pipeline definition to lint, test, and container-build on push
-- **Why it matters:**  
-  - Ensures your code stays correct as you iterate  
-  - Automates deployments to Docker or Kubernetes on the Orin  
+- **Why it matters:**
+  - Ensures your code stays correct as you iterate
+  - Automates deployments to Docker or Kubernetes on the Orin
 
 ---
 
 ### 2. **Performance & Resource Monitoring Dashboard**
-- **What to ask for:**  
-  - A Prometheus + Grafana setup (or lightweight equivalent) to track GPU/CPU/RAM, queue depths, and agent latencies  
-  - Pre-built dashboard JSON for Grafana  
-- **Why it matters:**  
-  - Gives real-time insight into bottlenecks and helps you tune concurrency limits  
+- **What to ask for:**
+  - A Prometheus + Grafana setup (or lightweight equivalent) to track GPU/CPU/RAM, queue depths, and agent latencies
+  - Pre-built dashboard JSON for Grafana
+- **Why it matters:**
+  - Gives real-time insight into bottlenecks and helps you tune concurrency limits
 
 ---
 
 ### 3. **SmolAgents YAML Generator**
-- **What to ask for:**  
-  - A mini-script or notebook that, given an MCP template, auto-generates the corresponding SmolAgent YAML skeleton  
-- **Why it matters:**  
-  - Speeds up creating or updating your 8 agent specs in a consistent format  
+- **What to ask for:**
+  - A mini-script or notebook that, given an MCP template, auto-generates the corresponding SmolAgent YAML skeleton
+- **Why it matters:**
+  - Speeds up creating or updating your 8 agent specs in a consistent format
 
 ---
 
 ### 4. **Vector Database & RAG Bootstrapping**
-- **What to ask for:**  
-  - A Jupyter notebook that ingests your `/raw_notes/`, embeds them via a chosen model, and populates Chroma/Weaviate/Redis-Vector  
-  - Sample retrieval query functions  
-- **Why it matters:**  
-  - Gives immediate search & retrieval for your Synthesizer and Archivist agents  
+- **What to ask for:**
+  - A Jupyter notebook that ingests your `/raw_notes/`, embeds them via a chosen model, and populates Chroma/Weaviate/Redis-Vector
+  - Sample retrieval query functions
+- **Why it matters:**
+  - Gives immediate search & retrieval for your Synthesizer and Archivist agents
 
 ---
 
 ### 5. **Prompt-Engineering Recipe Book**
-- **What to ask for:**  
-  - A markdown guide of system-prompt patterns (e.g., chain-of-thought prompts, zero/few-shot templates) tailored for each agent’s role  
-- **Why it matters:**  
-  - Codifies best practices and helps you tune agent performance over time  
+- **What to ask for:**
+  - A markdown guide of system-prompt patterns (e.g., chain-of-thought prompts, zero/few-shot templates) tailored for each agent’s role
+- **Why it matters:**
+  - Codifies best practices and helps you tune agent performance over time
 
 ---
 
 ### 6. **Edge-AI Model Benchmarking Report**
-- **What to ask for:**  
-  - A Python script that runs end-to-end inference tests on your Jetson (various quantized models, batch sizes) and outputs a ranked performance table  
-- **Why it matters:**  
-  - Empowers you to pick the optimal model-size vs latency tradeoff for each agent  
+- **What to ask for:**
+  - A Python script that runs end-to-end inference tests on your Jetson (various quantized models, batch sizes) and outputs a ranked performance table
+- **Why it matters:**
+  - Empowers you to pick the optimal model-size vs latency tradeoff for each agent
 
 ---
 
 ### 7. **Alerting & Escalation Playbook**
-- **What to ask for:**  
-  - A set of sample alert rules (e.g., GPU saturation > 90%, queue backlog > 100) and webhook configurations (Slack, e-mail)  
-- **Why it matters:**  
-  - Keeps you proactive about system health without constant manual checks  
+- **What to ask for:**
+  - A set of sample alert rules (e.g., GPU saturation > 90%, queue backlog > 100) and webhook configurations (Slack, e-mail)
+- **Why it matters:**
+  - Keeps you proactive about system health without constant manual checks
 
 ---
 
 ### 8. **Agent-Graph Visualization Tool**
-- **What to ask for:**  
-  - A CLI script that reads your `MCPTemplateService` definitions and emits an up-to-date Mermaid or Graphviz graph automatically  
-- **Why it matters:**  
-  - Maintains clarity of your workflow as you add or refactor agents  
+- **What to ask for:**
+  - A CLI script that reads your `MCPTemplateService` definitions and emits an up-to-date Mermaid or Graphviz graph automatically
+- **Why it matters:**
+  - Maintains clarity of your workflow as you add or refactor agents
 
 ---
 
 ### 9. **Project Tracking & OKR Dashboard**
-- **What to ask for:**  
-  - A simple web dashboard (Flask or Streamlit) that pulls from your `/plans/okr.json` and `/task_log.csv` to show progress against goals  
-- **Why it matters:**  
-  - Aligns daily work with strategic objectives and highlights slippage  
+- **What to ask for:**
+  - A simple web dashboard (Flask or Streamlit) that pulls from your `/plans/okr.json` and `/task_log.csv` to show progress against goals
+- **Why it matters:**
+  - Aligns daily work with strategic objectives and highlights slippage
 
 ---
 
 ### 10. **Security & Compliance Checklist**
-- **What to ask for:**  
-  - A structured list of potential risks (data privacy, model drift, dependency vulnerabilities) and mitigation steps  
-- **Why it matters:**  
-  - Ensures your edge-AI system remains robust and auditable  
+- **What to ask for:**
+  - A structured list of potential risks (data privacy, model drift, dependency vulnerabilities) and mitigation steps
+- **Why it matters:**
+  - Ensures your edge-AI system remains robust and auditable
 
 ---
 
 Each of these artifacts or scripts fills a **common but easily overlooked gap** in a solo edge-AI implementation. They will help you go from “proof-of-concept” to a **production-grade**, maintainable, and observable system—while playing to your strengths in strategic planning, rapid iteration, and continuous improvement.<br>
 
 <i>[5/10/2025, 5:10:25 AM]</i> 👉 <b>👤 User</b>: Provide an granular implementation plan for all of this on my machine. Take a chat-driven Ai assisted and Ai augmented approach. Assume I have an Ai agent such as yourself always available. By chat driven I mean you will provide a series of MECE prompts that I will use to move me along the process in the most cognitive-ergonomic manner where all cognitive efforts which are best suited for you are offloaded to you while I retain what is best suited for me like oversight and direction. The prompts should follow a test driven approach so you would given me a prompt for the test , then the implementation that will pass the test, then the refactoring. I will work with the Ai until tests pass. I this sense I won’t be coding, you will. I will provide prompt s for code, run tests, refactor , etc . Make this very pragmatic, advantageous to have, highly useful and time saving. Before you provide the implementation improve this prompt and once I approve the improved prompt you can go on <br>
-<i>[5/10/2025, 5:10:26 AM]</i> 👉 <b>🤖 Assistant</b>: 
+<i>[5/10/2025, 5:10:26 AM]</i> 👉 <b>🤖 Assistant</b>:
 
 **Improved Prompt:**
 
-> I want a **granular, test-driven implementation plan** for setting up and deploying my eight edge-AI agents on my NVIDIA Jetson AGX Orin, leveraging LiteLLM, Triton/TensorRT, Hugging Face SmolAgents, FastAPI/Redis orchestration, and all the infrastructure we discussed.  
->  
-> Use a **chat-driven, AI-assisted approach**: you’ll generate a series of **MECE prompts** I can copy-paste to drive each step. Each step should follow the **TDD cycle**:  
-> 1. **Test Prompt:** Ask me to write or run a specific test that defines success.  
-> 2. **Implementation Prompt:** Provide the code or configuration needed to make the test pass.  
-> 3. **Refactoring Prompt:** Suggest improvements or refactors once the test passes.  
->  
-> I will handle oversight and direction, while you (the AI) handle the detailed code and configuration.  
->  
-> The plan should be:  
-> - **Highly pragmatic** and **time-saving**.  
-> - **Cognitively ergonomic**, offloading all AI-suited tasks to you.  
-> - Cover environment setup, scaffolding, adapters, domain, service, infra, model deployment, testing, monitoring, and documentation.  
+> I want a **granular, test-driven implementation plan** for setting up and deploying my eight edge-AI agents on my NVIDIA Jetson AGX Orin, leveraging LiteLLM, Triton/TensorRT, Hugging Face SmolAgents, FastAPI/Redis orchestration, and all the infrastructure we discussed.
+>
+> Use a **chat-driven, AI-assisted approach**: you’ll generate a series of **MECE prompts** I can copy-paste to drive each step. Each step should follow the **TDD cycle**:
+> 1. **Test Prompt:** Ask me to write or run a specific test that defines success.
+> 2. **Implementation Prompt:** Provide the code or configuration needed to make the test pass.
+> 3. **Refactoring Prompt:** Suggest improvements or refactors once the test passes.
+>
+> I will handle oversight and direction, while you (the AI) handle the detailed code and configuration.
+>
+> The plan should be:
+> - **Highly pragmatic** and **time-saving**.
+> - **Cognitively ergonomic**, offloading all AI-suited tasks to you.
+> - Cover environment setup, scaffolding, adapters, domain, service, infra, model deployment, testing, monitoring, and documentation.
 
 Please confirm if this improved prompt captures your request; once approved, I’ll generate the full sequence of MECE, test-driven prompts.<br>
 
 <i>[5/10/2025, 5:11:53 AM]</i> 👉 <b>👤 User</b>: Confirmed, continue <br>
-<i>[5/10/2025, 5:11:54 AM]</i> 👉 <b>🤖 Assistant</b>: 
+<i>[5/10/2025, 5:11:54 AM]</i> 👉 <b>🤖 Assistant</b>:
 
 Below is your **granular, TDD-style, chat-driven implementation plan**. For each major phase, you’ll copy–paste **three MECE prompts** into our chat:
 
-1. **Test Prompt**: You run or write a test to define success.  
-2. **Implementation Prompt**: You ask me to produce the code/configuration to make the test pass.  
+1. **Test Prompt**: You run or write a test to define success.
+2. **Implementation Prompt**: You ask me to produce the code/configuration to make the test pass.
 3. **Refactoring Prompt**: You ask me to clean up or improve once the test is green.
 
 Follow these in order. I’ll handle all the code; you retain oversight and run the tests. Let’s begin.
@@ -2252,7 +2252,7 @@ Follow these in order. I’ll handle all the code; you retain oversight and run 
 
 ### 1.1 Python & Virtual Environment
 
-**1.1-A (Test Prompt):**  
+**1.1-A (Test Prompt):**
 ```
 Run these commands and confirm the output meets the criteria:
   python3 --version      # must be ≥ 3.10
@@ -2260,7 +2260,7 @@ Run these commands and confirm the output meets the criteria:
 Copy the exact outputs here.
 ```
 
-**1.1-B (Implementation Prompt):**  
+**1.1-B (Implementation Prompt):**
 ```
 Write a bash script `setup_env.sh` that:
 1. Creates a virtual environment in `.venv/`
@@ -2269,18 +2269,18 @@ Write a bash script `setup_env.sh` that:
 Ensure the script is idempotent.
 ```
 
-**1.1-C (Refactoring Prompt):**  
+**1.1-C (Refactoring Prompt):**
 ```
-Extract the dependency list into `requirements.txt`.  
-Refactor `setup_env.sh` to install from `requirements.txt`.  
-Add error checking for missing python3 or pip.  
+Extract the dependency list into `requirements.txt`.
+Refactor `setup_env.sh` to install from `requirements.txt`.
+Add error checking for missing python3 or pip.
 ```
 
 ---
 
 ### 1.2 Docker & NVIDIA Toolkit
 
-**1.2-A (Test Prompt):**  
+**1.2-A (Test Prompt):**
 ```
 Run:
   docker --version
@@ -2290,7 +2290,7 @@ and verify Docker & NVIDIA Container Toolkit are installed and GPU is visible.
 Paste the outputs here.
 ```
 
-**1.2-B (Implementation Prompt):**  
+**1.2-B (Implementation Prompt):**
 ```
 Provide installation steps (script or apt commands) to:
 - Install Docker CE
@@ -2299,7 +2299,7 @@ Provide installation steps (script or apt commands) to:
 Include verification commands at the end.
 ```
 
-**1.2-C (Refactoring Prompt):**  
+**1.2-C (Refactoring Prompt):**
 ```
 Convert those steps into a reusable bash script `setup_docker.sh` with logging and idempotency.
 ```
@@ -2310,7 +2310,7 @@ Convert those steps into a reusable bash script `setup_docker.sh` with logging a
 
 ### 2.1 Directory & File Structure
 
-**2.1-A (Test Prompt):**  
+**2.1-A (Test Prompt):**
 ```
 Write a pytest test `test_scaffold.py` that:
 - Runs the scaffold script
@@ -2318,12 +2318,12 @@ Write a pytest test `test_scaffold.py` that:
 - Fails if any are missing.
 ```
 
-**2.1-B (Implementation Prompt):**  
+**2.1-B (Implementation Prompt):**
 ```
 Write `scaffold_project.py` to create the directory tree and placeholder files as per our agreed project structure.
 ```
 
-**2.1-C (Refactoring Prompt):**  
+**2.1-C (Refactoring Prompt):**
 ```
 Improve `scaffold_project.py` to read the directory spec from a YAML file under `config/structure.yaml` rather than hard-coding.
 ```
@@ -2334,7 +2334,7 @@ Improve `scaffold_project.py` to read the directory spec from a YAML file under 
 
 ### 3.1 Core Agent & Graph
 
-**3.1-A (Test Prompt):**  
+**3.1-A (Test Prompt):**
 ```
 Write pytest tests in `tests/test_domain.py` that:
 - Import `AgentGraph`, `Agent`, and `MCPConfig`
@@ -2342,7 +2342,7 @@ Write pytest tests in `tests/test_domain.py` that:
 - Run the graph and assert the returned trace matches expectations
 ```
 
-**3.1-B (Implementation Prompt):**  
+**3.1-B (Implementation Prompt):**
 ```
 Implement `domain.py` with:
 - `MCPConfig`, `AgentResponse`
@@ -2351,7 +2351,7 @@ Implement `domain.py` with:
 Ensure it passes the tests.
 ```
 
-**3.1-C (Refactoring Prompt):**  
+**3.1-C (Refactoring Prompt):**
 ```
 Refactor `AgentGraph.run` to add logging of each step (agent name + timestamp) into `logs/domain_trace.log`.
 ```
@@ -2362,7 +2362,7 @@ Refactor `AgentGraph.run` to add logging of each step (agent name + timestamp) i
 
 ### 4.1 Orchestration Service & Templates
 
-**4.1-A (Test Prompt):**  
+**4.1-A (Test Prompt):**
 ```
 Write tests in `tests/test_service.py` that:
 - Instantiate `AgentOrchestrationService` with a mock LLMPort
@@ -2370,7 +2370,7 @@ Write tests in `tests/test_service.py` that:
 - Run a short workflow and verify `AgentResponse` objects contain correct agent names
 ```
 
-**4.1-B (Implementation Prompt):**  
+**4.1-B (Implementation Prompt):**
 ```
 Implement `service.py`:
 - `AgentOrchestrationService` bootstraps agents from a provider map
@@ -2378,7 +2378,7 @@ Implement `service.py`:
 Make sure tests pass.
 ```
 
-**4.1-C (Refactoring Prompt):**  
+**4.1-C (Refactoring Prompt):**
 ```
 Add caching to `MCPTemplateService.get_template` (e.g. `functools.lru_cache`) and write a test to ensure subsequent calls are faster.
 ```
@@ -2389,22 +2389,22 @@ Add caching to `MCPTemplateService.get_template` (e.g. `functools.lru_cache`) an
 
 ### 5.1 LLM & A2A Abstract Adapters
 
-**5.1-A (Test Prompt):**  
+**5.1-A (Test Prompt):**
 ```
 Write tests in `tests/test_adapters.py` that:
 - Instantiate each adapter stub (`LiteLLMAdapter`, `TritonAdapter`, `OpenAIAdapter`, `InMemoryA2APort`, `RedisA2APort`)
 - Assert they conform to the expected interface signatures (e.g. `.generate()` exists, `.send()`/.receive())
 ```
 
-**5.1-B (Implementation Prompt):**  
+**5.1-B (Implementation Prompt):**
 ```
 Provide `adapters.py` with all abstract adapter classes and stub methods raising NotImplementedError.
 Ensure interface signatures match tests.
 ```
 
-**5.1-C (Refactoring Prompt):**  
+**5.1-C (Refactoring Prompt):**
 ```
-Add docstrings to each adapter stub and group imports.  
+Add docstrings to each adapter stub and group imports.
 Optionally use `abc.ABC` base classes to enforce abstract methods.
 ```
 
@@ -2414,7 +2414,7 @@ Optionally use `abc.ABC` base classes to enforce abstract methods.
 
 ### 6.1 FastAPI & Redis Wiring
 
-**6.1-A (Test Prompt):**  
+**6.1-A (Test Prompt):**
 ```
 Write pytest-asyncio tests in `tests/test_infra.py` that:
 - Start the FastAPI app using TestClient
@@ -2422,14 +2422,14 @@ Write pytest-asyncio tests in `tests/test_infra.py` that:
 - Call `/run` with a simple planner template and assert a 200 OK and correct JSON schema
 ```
 
-**6.1-B (Implementation Prompt):**  
+**6.1-B (Implementation Prompt):**
 ```
 Implement `infrastructure.py`:
 - FastAPI app with `/agents`, `/templates`, `/run`
 - Wire in `AgentOrchestrationService`, `MCPTemplateService`, `LiteLLMAdapter`, `InMemoryA2APort`
 ```
 
-**6.1-C (Refactoring Prompt):**  
+**6.1-C (Refactoring Prompt):**
 ```
 Add RedisA2APort fallback: if a `REDIS_URL` env var is set, use Redis instead of in-memory.
 Write a test to simulate providing `REDIS_URL` and verify the endpoint still works.
@@ -2441,7 +2441,7 @@ Write a test to simulate providing `REDIS_URL` and verify the endpoint still wor
 
 ### 7.1 LiteLLM & Triton Configuration
 
-**7.1-A (Test Prompt):**  
+**7.1-A (Test Prompt):**
 ```
 Write a test `tests/test_litellm_config.py` that:
 - Loads `config/litellm.config.yaml`
@@ -2449,12 +2449,12 @@ Write a test `tests/test_litellm_config.py` that:
 - Validates each entry has `model_name` and a valid provider
 ```
 
-**7.1-B (Implementation Prompt):**  
+**7.1-B (Implementation Prompt):**
 ```
 Generate `config/litellm.config.yaml` with our models: ollama-mistral, triton-codellama, openai-gpt4, default.
 ```
 
-**7.1-C (Refactoring Prompt):**  
+**7.1-C (Refactoring Prompt):**
 ```
 Add schema validation using `cerberus` or `pydantic` to load the YAML and enforce the model_list schema.
 ```
@@ -2465,7 +2465,7 @@ Add schema validation using `cerberus` or `pydantic` to load the YAML and enforc
 
 ### 8.1 Test & CI Pipeline
 
-**8.1-A (Test Prompt):**  
+**8.1-A (Test Prompt):**
 ```
 Write a GitHub Actions workflow file `.github/workflows/ci.yaml` that:
 - Checks out code
@@ -2474,12 +2474,12 @@ Write a GitHub Actions workflow file `.github/workflows/ci.yaml` that:
 - Runs `pytest --maxfail=1 --disable-warnings -q`
 ```
 
-**8.1-B (Implementation Prompt):**  
+**8.1-B (Implementation Prompt):**
 ```
 Provide `.github/workflows/ci.yaml` as described.
 ```
 
-**8.1-C (Refactoring Prompt):**  
+**8.1-C (Refactoring Prompt):**
 ```
 Extend the CI to build a Docker image `agent-orchestrator:latest` and push to GitHub Container Registry on successful tests.
 ```
@@ -2490,7 +2490,7 @@ Extend the CI to build a Docker image `agent-orchestrator:latest` and push to Gi
 
 ### 9.1 README & ERD Visualization
 
-**9.1-A (Test Prompt):**  
+**9.1-A (Test Prompt):**
 ```
 Write a small script `scripts/generate_erd.sh` that:
 - Reads `infra/` and `adapters/` folders
@@ -2498,12 +2498,12 @@ Write a small script `scripts/generate_erd.sh` that:
 Test that running it creates `docs/ERD.mmd`.
 ```
 
-**9.1-B (Implementation Prompt):**  
+**9.1-B (Implementation Prompt):**
 ```
 Implement `scripts/generate_erd.sh` using `find` and templating to produce the Mermaid ERD from our earlier spec.
 ```
 
-**9.1-C (Refactoring Prompt):**  
+**9.1-C (Refactoring Prompt):**
 ```
 Convert `generate_erd.sh` into a Python script for better cross-platform compatibility, and write unit tests for its core function.
 ```
@@ -2512,19 +2512,19 @@ Convert `generate_erd.sh` into a Python script for better cross-platform compati
 
 ### 9.2 Prometheus & Grafana Setup
 
-**9.2-A (Test Prompt):**  
+**9.2-A (Test Prompt):**
 ```
 Write a check in `tests/test_monitoring.sh` that:
 - Attempts to scrape `http://localhost:8000/metrics`
 - Fails if no Prometheus metrics endpoint is found
 ```
 
-**9.2-B (Implementation Prompt):**  
+**9.2-B (Implementation Prompt):**
 ```
 Add a `/metrics` endpoint to the FastAPI app exposing basic counters (requests, errors, latency) via `prometheus_client`.
 ```
 
-**9.2-C (Refactoring Prompt):**  
+**9.2-C (Refactoring Prompt):**
 ```
 Define a Grafana dashboard JSON that graphs those metrics; add a script `scripts/deploy_monitoring.sh` to load it into Grafana’s API.
 ```
@@ -2533,35 +2533,35 @@ Define a Grafana dashboard JSON that graphs those metrics; add a script `scripts
 
 🎯 **Next Step:** Copy **Prompt 1.1-A**, paste into our chat, run those tests, and share the output. We’ll then proceed with **Prompt 1.1-B** to implement the fix.<br>
 
-<i>[5/10/2025, 5:37:17 AM]</i> 👉 <b>👤 User</b>: 
+<i>[5/10/2025, 5:37:17 AM]</i> 👉 <b>👤 User</b>:
 
 I want to expand the app , building on what you have so far but extending it to incorporate the following , clean it up to improve and make more efficient then provide the prompts needed:
-Cluade like projects - however each project has a dedicated “project manager ai agent “ and the user can add other team members to the project- team members can be humans or ai agents (autonomous, semi-autonomous, reactive, scheduled) - team member ai agents are not the same type of agents as the 8 we discussed already or the project management ai agents- they are custom agents - the project agent manages the project, the project agents, and recommends cognitive artifacts to the user through out the project as needed to maximize cognitive ergonomics and may also recommend agents from the library as is relevant and value added 
+Cluade like projects - however each project has a dedicated “project manager ai agent “ and the user can add other team members to the project- team members can be humans or ai agents (autonomous, semi-autonomous, reactive, scheduled) - team member ai agents are not the same type of agents as the 8 we discussed already or the project management ai agents- they are custom agents - the project agent manages the project, the project agents, and recommends cognitive artifacts to the user through out the project as needed to maximize cognitive ergonomics and may also recommend agents from the library as is relevant and value added
 Working with agents or on projects produce ‘artifacts’. Cognitive artifacts are inputs/thinking tools: notes, lists, forms, worksheets, blank questionnaires, etc. intellectual artifacts are products and are derived from individual of groups of artifacts ie reports, blueprints, plans, software, scripts, creative works. Information products are intellectual artifacts that have undertaken and passed QA
-Custom agents are created using artifacts for grounding (they are kind of like little sandboxes) - they are smolagents- users can always see the artifacts a custom agent is made of unless the creator locks it - custom agents can be published to a shared or general library for use by others . Agents and team members can be assigned, unassigned or reassigned to a project or task and may share or own artifacts 
+Custom agents are created using artifacts for grounding (they are kind of like little sandboxes) - they are smolagents- users can always see the artifacts a custom agent is made of unless the creator locks it - custom agents can be published to a shared or general library for use by others . Agents and team members can be assigned, unassigned or reassigned to a project or task and may share or own artifacts
 Everything is tracked via knowledge graphs: there is a knowledge graph for each project, agent, workspace (all projects and tasks of a user) all project artifacts are stored in the ‘case file’
 <br>
 
-<i>[5/10/2025, 5:37:19 AM]</i> 👉 <b>🤖 Assistant</b>: 
+<i>[5/10/2025, 5:37:19 AM]</i> 👉 <b>🤖 Assistant</b>:
 
 **Improved Prompt:**
 
-> Extend our existing edge-AI agent orchestrator to support **Cluade-style projects** with:  
-> 1. **Project Manager Agents** (one per project) that oversee projects and recommend cognitive artifacts.  
-> 2. **Custom Team-Member Agents** (autonomous, semi-autonomous, reactive, scheduled), grounded in artifacts via SmolAgents, which users can lock or publish.  
-> 3. A **Case-File** per project to store all artifacts (cognitive, intellectual, information).  
-> 4. **Assignment logic** for humans or AI agents to projects/tasks, with ownership and sharing of artifacts.  
-> 5. A set of **Knowledge Graphs** (per project, per agent, per workspace) to track entities and relationships.  
+> Extend our existing edge-AI agent orchestrator to support **Cluade-style projects** with:
+> 1. **Project Manager Agents** (one per project) that oversee projects and recommend cognitive artifacts.
+> 2. **Custom Team-Member Agents** (autonomous, semi-autonomous, reactive, scheduled), grounded in artifacts via SmolAgents, which users can lock or publish.
+> 3. A **Case-File** per project to store all artifacts (cognitive, intellectual, information).
+> 4. **Assignment logic** for humans or AI agents to projects/tasks, with ownership and sharing of artifacts.
+> 5. A set of **Knowledge Graphs** (per project, per agent, per workspace) to track entities and relationships.
 >
-> Clean up and optimize the existing code structure for these new features, then provide a **test-driven, chat-prompt plan** (MECE) covering:  
-> - Domain model extensions (projects, team members, artifacts, graphs)  
-> - Service layer changes (project orchestration, artifact management, assignment)  
-> - Adapter/Infra adjustments (SmolAgents integration, knowledge-graph store)  
-> - FastAPI endpoints for project & team management  
->  
-> For each major feature, supply three prompts:  
-> 1. **Test Prompt** to define success.  
-> 2. **Implementation Prompt** for code/config.  
+> Clean up and optimize the existing code structure for these new features, then provide a **test-driven, chat-prompt plan** (MECE) covering:
+> - Domain model extensions (projects, team members, artifacts, graphs)
+> - Service layer changes (project orchestration, artifact management, assignment)
+> - Adapter/Infra adjustments (SmolAgents integration, knowledge-graph store)
+> - FastAPI endpoints for project & team management
+>
+> For each major feature, supply three prompts:
+> 1. **Test Prompt** to define success.
+> 2. **Implementation Prompt** for code/config.
 > 3. **Refactoring Prompt** for cleanup once tests pass.
 
 ---
@@ -2569,21 +2569,21 @@ Everything is tracked via knowledge graphs: there is a knowledge graph for each 
 I’ll now outline the **domain & service extensions** and then craft the **chat-driven TDD prompts** for Phase 10: Project & Team Management. Let me know if you’d like any adjustments before we start the prompts.<br>
 
 <i>[5/10/2025, 5:38:40 AM]</i> 👉 <b>👤 User</b>: Continue <br>
-<i>[5/10/2025, 5:38:41 AM]</i> 👉 <b>🤖 Assistant</b>: 
+<i>[5/10/2025, 5:38:41 AM]</i> 👉 <b>🤖 Assistant</b>:
 
 Below is **Phase 10: Project & Team Management**, broken into four major features. For each, you’ll get **three MECE prompts** (Test → Implementation → Refactor). Copy–paste them in order to drive our TDD workflow.
 
 ---
 
-## 10.1 Domain Model Extensions  
+## 10.1 Domain Model Extensions
 
-**New Entities:**  
-- `Project` (id, name, manager_agent, case_file_path)  
-- `TeamMember` (id, name, type[human|ai], behavior[autonomous|semi|reactive|scheduled])  
-- `Artifact` (id, project_id, owner_id, type[cognitive|intellectual|info], path, locked)  
-- `KnowledgeGraph` (id, scope[project|agent|workspace], graph_path)  
+**New Entities:**
+- `Project` (id, name, manager_agent, case_file_path)
+- `TeamMember` (id, name, type[human|ai], behavior[autonomous|semi|reactive|scheduled])
+- `Artifact` (id, project_id, owner_id, type[cognitive|intellectual|info], path, locked)
+- `KnowledgeGraph` (id, scope[project|agent|workspace], graph_path)
 
-### 10.1-A **Test Prompt**  
+### 10.1-A **Test Prompt**
 ```
 # tests/test_project_domain.py
 Write pytest tests that:
@@ -2595,7 +2595,7 @@ Write pytest tests that:
 Fail if any attribute or link is missing.
 ```
 
-### 10.1-B **Implementation Prompt**  
+### 10.1-B **Implementation Prompt**
 ```
 Implement in domain.py:
 - Data classes (Pydantic models or dataclasses) for Project, TeamMember, Artifact, KnowledgeGraph.
@@ -2607,7 +2607,7 @@ Implement in domain.py:
 Make tests from 10.1-A pass.
 ```
 
-### 10.1-C **Refactoring Prompt**  
+### 10.1-C **Refactoring Prompt**
 ```
 Refactor domain models to:
 - Use a mixin for shared id/name fields.
@@ -2618,15 +2618,15 @@ Ensure all domain tests still pass.
 
 ---
 
-## 10.2 Service Layer: Project & Artifact Management  
+## 10.2 Service Layer: Project & Artifact Management
 
-**New Services:**  
-- `ProjectService` (create, update, list, load case file)  
-- `TeamService` (assign/unassign members)  
-- `ArtifactService` (create, lock, publish, list)  
-- `GraphService` (initialize graph, query)  
+**New Services:**
+- `ProjectService` (create, update, list, load case file)
+- `TeamService` (assign/unassign members)
+- `ArtifactService` (create, lock, publish, list)
+- `GraphService` (initialize graph, query)
 
-### 10.2-A **Test Prompt**  
+### 10.2-A **Test Prompt**
 ```
 # tests/test_project_service.py
 Write tests that:
@@ -2638,7 +2638,7 @@ Write tests that:
 Fail if any operation does not produce the expected state.
 ```
 
-### 10.2-B **Implementation Prompt**  
+### 10.2-B **Implementation Prompt**
 ```
 In service.py, implement:
 - ProjectService with an internal dict store and methods: create_project, get_project, list_projects.
@@ -2648,7 +2648,7 @@ In service.py, implement:
 Make tests from 10.2-A pass.
 ```
 
-### 10.2-C **Refactoring Prompt**  
+### 10.2-C **Refactoring Prompt**
 ```
 Refactor services to:
 - Extract a generic `InMemoryStore` base class for CRUD operations.
@@ -2659,17 +2659,17 @@ Ensure service tests still pass.
 
 ---
 
-## 10.3 Infrastructure & Adapters  
+## 10.3 Infrastructure & Adapters
 
-**New Endpoints:**  
-- `POST /projects` (create)  
-- `GET /projects`  
-- `POST /projects/{id}/members` (assign)  
-- `POST /projects/{id}/artifacts` (create)  
-- `POST /artifacts/{id}/lock`  
-- `POST /graphs/{scope}/{id}` (init graph)  
+**New Endpoints:**
+- `POST /projects` (create)
+- `GET /projects`
+- `POST /projects/{id}/members` (assign)
+- `POST /projects/{id}/artifacts` (create)
+- `POST /artifacts/{id}/lock`
+- `POST /graphs/{scope}/{id}` (init graph)
 
-### 10.3-A **Test Prompt**  
+### 10.3-A **Test Prompt**
 ```
 # tests/test_projects_api.py
 Using FastAPI TestClient, write tests to:
@@ -2682,7 +2682,7 @@ Using FastAPI TestClient, write tests to:
 Fail any that don’t meet expectations.
 ```
 
-### 10.3-B **Implementation Prompt**  
+### 10.3-B **Implementation Prompt**
 ```
 Extend infrastructure.py:
 - Add Pydantic schemas for ProjectCreate, MemberAssign, ArtifactCreate.
@@ -2691,7 +2691,7 @@ Extend infrastructure.py:
 Make tests from 10.3-A pass.
 ```
 
-### 10.3-C **Refactoring Prompt**  
+### 10.3-C **Refactoring Prompt**
 ```
 Improve response models with proper OpenAPI metadata (description, examples).
 Extract common path logic into a router (e.g., `project_router = APIRouter()`).
@@ -2701,12 +2701,12 @@ Ensure all API tests still pass.
 
 ---
 
-## 10.4 Knowledge Graph Integration  
+## 10.4 Knowledge Graph Integration
 
-**Feature:**  
-- Store and query graphs per scope using a simple graph store (e.g., NetworkX + JSON).  
+**Feature:**
+- Store and query graphs per scope using a simple graph store (e.g., NetworkX + JSON).
 
-### 10.4-A **Test Prompt**  
+### 10.4-A **Test Prompt**
 ```
 # tests/test_graph_service.py
 Write tests that:
@@ -2716,7 +2716,7 @@ Write tests that:
 Fail if graph behavior is incorrect.
 ```
 
-### 10.4-B **Implementation Prompt**  
+### 10.4-B **Implementation Prompt**
 ```
 In service.py’s GraphService:
 - Implement init_graph(scope, scope_id) writing `graphs/{scope}_{scope_id}.json` with empty nodes/edges.
@@ -2725,7 +2725,7 @@ In service.py’s GraphService:
 Make tests from 10.4-A pass.
 ```
 
-### 10.4-C **Refactoring Prompt**  
+### 10.4-C **Refactoring Prompt**
 ```
 Refactor GraphService to:
 - Use NetworkX under the hood (nx.DiGraph), serializing via `nx.node_link_data`.
@@ -2738,20 +2738,20 @@ Ensure all graph tests still pass.
 **Next Step:** Copy **Prompt 10.1-A** into our chat, write and run those domain-model tests, and share the results. We’ll then proceed to **Prompt 10.1-B** for implementation.<br>
 
 <i>[5/10/2025, 5:46:21 AM]</i> 👉 <b>👤 User</b>: Provide custom instructions I can provide to GitHub copilot to fine tune the development process and follow best practices <br>
-<i>[5/10/2025, 5:46:22 AM]</i> 👉 <b>🤖 Assistant</b>: 
+<i>[5/10/2025, 5:46:22 AM]</i> 👉 <b>🤖 Assistant</b>:
 
 **Improved Prompt:**
 
 > I’m building an edge-AI agent orchestrator on a Jetson Orin with Python, FastAPI, Redis, SmolAgents, LiteLLM/Triton, SmolAgents, and TDD.  Provide a set of **GitHub Copilot “custom instructions”**—in the form of a JSON settings file snippet and a comment header template—that I can include in my repo (or at the top of each new module). These instructions should steer Copilot to:
-> - Follow TDD (write tests first)  
-> - Use Python 3.10+ features and strict type hints  
-> - Adhere to PEP 8 / best practices  
-> - Generate modular, small functions  
-> - Include docstrings, typing, and examples  
-> - Respect our project’s ports-and-adapters architecture and hexagonal design  
-> - Prefer asyncio / async endpoints in FastAPI  
-> - Scaffold SmolAgents YAML with correct structure  
-> - Produce Prometheus metrics and logging hooks  
+> - Follow TDD (write tests first)
+> - Use Python 3.10+ features and strict type hints
+> - Adhere to PEP 8 / best practices
+> - Generate modular, small functions
+> - Include docstrings, typing, and examples
+> - Respect our project’s ports-and-adapters architecture and hexagonal design
+> - Prefer asyncio / async endpoints in FastAPI
+> - Scaffold SmolAgents YAML with correct structure
+> - Produce Prometheus metrics and logging hooks
 
 ---
 
@@ -2785,9 +2785,9 @@ Ensure all graph tests still pass.
 }
 ```
 
-> **How to use:**  
-> 1. Save this as `.github/copilot-settings.json` in your repo root.  
-> 2. In VS Code, ensure the Copilot extension is updated to support customInstructions.  
+> **How to use:**
+> 1. Save this as `.github/copilot-settings.json` in your repo root.
+> 2. In VS Code, ensure the Copilot extension is updated to support customInstructions.
 > 3. Restart your editor so Copilot picks up the new guidance.
 
 ---
@@ -2811,9 +2811,9 @@ At the top of each new Python module, include:
 # ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 ```
 
-> **How to use:**  
-> 1. Paste this block at the top of each `.py` file.  
-> 2. Replace `<brief module purpose>` with a one-sentence summary.  
+> **How to use:**
+> 1. Paste this block at the top of each `.py` file.
+> 2. Replace `<brief module purpose>` with a one-sentence summary.
 > 3. As you type, Copilot will reference these comments to align its suggestions with your project’s best practices.
 
 ---
@@ -2821,7 +2821,7 @@ At the top of each new Python module, include:
 With these two artifacts, GitHub Copilot will be **tightly guided** to produce code and tests that fit your **TDD**, **hexagonal**, and **edge-AI** requirements—saving you time and ensuring consistency across the codebase.<br>
 
 <i>[5/10/2025, 5:52:17 AM]</i> 👉 <b>👤 User</b>: What are MECE some prompts I haven’t thought to ask you but will be very possible and help guarantee successful implementation or those you know I will need<br>
-<i>[5/10/2025, 5:52:18 AM]</i> 👉 <b>🤖 Assistant</b>: 
+<i>[5/10/2025, 5:52:18 AM]</i> 👉 <b>🤖 Assistant</b>:
 
 **Improved Prompt:**
 
@@ -2829,37 +2829,37 @@ With these two artifacts, GitHub Copilot will be **tightly guided** to produce c
 
 ---
 
-### 1. Planning & Strategy  
-1. **“Generate a project-roadmap Gantt chart outline** with major milestones, dependencies, and resource estimates for the next 12 weeks.”  
-2. **“Create an OKR framework** for this project, with three objectives and key results that map to deliverables we’ve defined.”  
+### 1. Planning & Strategy
+1. **“Generate a project-roadmap Gantt chart outline** with major milestones, dependencies, and resource estimates for the next 12 weeks.”
+2. **“Create an OKR framework** for this project, with three objectives and key results that map to deliverables we’ve defined.”
 
-### 2. Testing & Validation  
-3. **“List and scaffold negative-test scenarios** (edge cases and failure modes) for each FastAPI endpoint and adapter.”  
-4. **“Provide a fuzz-testing plan** for the LLM prompts and agent-to-agent messages to uncover unexpected inputs.”  
+### 2. Testing & Validation
+3. **“List and scaffold negative-test scenarios** (edge cases and failure modes) for each FastAPI endpoint and adapter.”
+4. **“Provide a fuzz-testing plan** for the LLM prompts and agent-to-agent messages to uncover unexpected inputs.”
 
-### 3. Performance & Optimization  
-5. **“Benchmark GPU memory usage** and latency for each quantized model under realistic load profiles; produce a performance matrix.”  
-6. **“Recommend TensorRT optimization passes** (precision, layer fusion, batch sizes) tailored to the AGX Orin.”  
+### 3. Performance & Optimization
+5. **“Benchmark GPU memory usage** and latency for each quantized model under realistic load profiles; produce a performance matrix.”
+6. **“Recommend TensorRT optimization passes** (precision, layer fusion, batch sizes) tailored to the AGX Orin.”
 
-### 4. Security & Compliance  
-7. **“Audit the codebase for injection risks** (e.g., unvalidated prompts or YAML) and suggest sanitization strategies.”  
-8. **“Outline a data-privacy compliance checklist** for handling user-generated artifacts and logs on the device.”  
+### 4. Security & Compliance
+7. **“Audit the codebase for injection risks** (e.g., unvalidated prompts or YAML) and suggest sanitization strategies.”
+8. **“Outline a data-privacy compliance checklist** for handling user-generated artifacts and logs on the device.”
 
-### 5. Maintainability & CI/CD  
-9. **“Generate a Dockerfile and Helm chart** for containerizing and optionally orchestrating on Kubernetes at the edge.”  
-10. **“Write a CI/CD pipeline snippet** that automatically bumps semantic versions, generates changelogs, and publishes Docker images.”  
+### 5. Maintainability & CI/CD
+9. **“Generate a Dockerfile and Helm chart** for containerizing and optionally orchestrating on Kubernetes at the edge.”
+10. **“Write a CI/CD pipeline snippet** that automatically bumps semantic versions, generates changelogs, and publishes Docker images.”
 
-### 6. Observability & Monitoring  
-11. **“Design a Prometheus + Grafana dashboard** with key metrics (inference latency, queue depth, error rates, GPU utilization).”  
-12. **“Provide alert-rule templates** (e.g., Slack/webhook) for critical thresholds like GPU saturation > 90% or agent failures > 5%.”  
+### 6. Observability & Monitoring
+11. **“Design a Prometheus + Grafana dashboard** with key metrics (inference latency, queue depth, error rates, GPU utilization).”
+12. **“Provide alert-rule templates** (e.g., Slack/webhook) for critical thresholds like GPU saturation > 90% or agent failures > 5%.”
 
-### 7. Documentation & Onboarding  
-13. **“Produce a `docs/GettingStarted.md`** that walks a new developer through local setup, tests, and running a sample workflow.  
-14. **“Draft an API reference doc** (Markdown/OpenAPI) covering all endpoints, schemas, and example requests/responses.  
+### 7. Documentation & Onboarding
+13. **“Produce a `docs/GettingStarted.md`** that walks a new developer through local setup, tests, and running a sample workflow.
+14. **“Draft an API reference doc** (Markdown/OpenAPI) covering all endpoints, schemas, and example requests/responses.
 
-### 8. Scalability & Future-Proofing  
-15. **“Outline how to add a multi-node capability** so agents can offload heavy models to additional Orin devices over gRPC.  
-16. **“Recommend a plugin-framework design** so third-party developers can drop in new custom agents or artifact types.  
+### 8. Scalability & Future-Proofing
+15. **“Outline how to add a multi-node capability** so agents can offload heavy models to additional Orin devices over gRPC.
+16. **“Recommend a plugin-framework design** so third-party developers can drop in new custom agents or artifact types.
 
 ---
 
@@ -2882,7 +2882,7 @@ Copy any of these prompts into our chat to drive the next phase—whether it’s
 
 ---
 
-<i>[5/10/2025, 9:03:00 AM]</i> 👉 <b>👤 User</b>: 
+<i>[5/10/2025, 9:03:00 AM]</i> 👉 <b>👤 User</b>:
 
 When I do the following implementation prompt shouldn’t I also install all the development dependencies (ruff, black, isort, mypy, pytest,precommit, git actions etc, frontend: typscript, graphQL, vite, vitest, tdoc, storybook, prettier, etc,) as well ? Note I also want to use uv and pyproject.toml for dependency management for backend .
 
@@ -2892,31 +2892,31 @@ Write a bash script `setup_env.sh` that:
 3. Installs `fastapi`, `uvicorn`, `pydantic`, `redis`, `litellm[proxy]`, `smol_agents`, `pytest`
 Ensure the script is idempotent.<br>
 
-<i>[5/10/2025, 9:03:01 AM]</i> 👉 <b>🤖 Assistant</b>: 
+<i>[5/10/2025, 9:03:01 AM]</i> 👉 <b>🤖 Assistant</b>:
 
 **Improved Prompt:**
 
 > Write a bash script `setup_env.sh` that bootstraps **both backend and frontend** environments in an **idempotent** way, using **pyproject.toml** for Python dependency management and **npm**/yarn for the frontend. The script should:
-> 
-> **Backend**  
-> 1. Detect or install (if missing) a Python 3.10+ toolchain (e.g., `poetry` or `pipx poetic`)  
-> 2. Initialize or reuse a `pyproject.toml` in the repo root  
-> 3. Create (if missing) and activate a virtual environment via `poetry install` (or `python -m venv .venv && poetry install`)  
-> 4. Add runtime dependencies to `pyproject.toml` (if not present):  
->    - `fastapi`, `uvicorn`, `pydantic`, `redis`, `litellm[proxy]`, `smol_agents`  
-> 5. Add development dependencies to `pyproject.toml` (if not present):  
->    - `ruff`, `black`, `isort`, `mypy`, `pytest`, `pre-commit`  
-> 
-> **Frontend**  
-> 6. Install Node.js toolchain (via `nvm` or system package) if missing  
-> 7. In `/frontend`, initialize a `package.json` (if missing)  
-> 8. Install runtime packages: `typescript`, `graphql`, `vite`  
-> 9. Install dev packages: `vitest`, `tsdoc`, `storybook`, `prettier`  
-> 
-> **Extras**  
-> - Install and configure a GitHub Actions workflow template (e.g. copy `.github/workflows/ci.yaml` stub)  
-> - Set up a `pre-commit` config file with hooks for linting and formatting  
-> 
+>
+> **Backend**
+> 1. Detect or install (if missing) a Python 3.10+ toolchain (e.g., `poetry` or `pipx poetic`)
+> 2. Initialize or reuse a `pyproject.toml` in the repo root
+> 3. Create (if missing) and activate a virtual environment via `poetry install` (or `python -m venv .venv && poetry install`)
+> 4. Add runtime dependencies to `pyproject.toml` (if not present):
+>    - `fastapi`, `uvicorn`, `pydantic`, `redis`, `litellm[proxy]`, `smol_agents`
+> 5. Add development dependencies to `pyproject.toml` (if not present):
+>    - `ruff`, `black`, `isort`, `mypy`, `pytest`, `pre-commit`
+>
+> **Frontend**
+> 6. Install Node.js toolchain (via `nvm` or system package) if missing
+> 7. In `/frontend`, initialize a `package.json` (if missing)
+> 8. Install runtime packages: `typescript`, `graphql`, `vite`
+> 9. Install dev packages: `vitest`, `tsdoc`, `storybook`, `prettier`
+>
+> **Extras**
+> - Install and configure a GitHub Actions workflow template (e.g. copy `.github/workflows/ci.yaml` stub)
+> - Set up a `pre-commit` config file with hooks for linting and formatting
+>
 > Ensure each step is **idempotent** (safe to re-run) and logs its progress.
 
 ---
@@ -2929,7 +2929,7 @@ If this captures your needs, let me know and I’ll generate the detailed script
 
 ---
 
-<i>[5/10/2025, 9:21:24 AM]</i> <b>👤 User</b>: 
+<i>[5/10/2025, 9:21:24 AM]</i> <b>👤 User</b>:
 
 That’s nearly it but I also want to add robust error management and centralized logging, consider the following and provide updated prompts respectively:
 
@@ -3048,7 +3048,7 @@ No, your prompt is actually quite good. It lists the desired components and asks
 
 ---
 
-<i>[5/10/2025, 9:21:54 AM]</i> <b>👤 User</b>: 
+<i>[5/10/2025, 9:21:54 AM]</i> <b>👤 User</b>:
 
 That’s nearly it but I also want to add robust error management and centralized logging, consider the following and provide updated prompts respectively:
 
@@ -3167,7 +3167,7 @@ No, your prompt is actually quite good. It lists the desired components and asks
 
 ---
 
-<i>[5/10/2025, 9:22:32 AM]</i> 👉 <b>👤 User</b>: 
+<i>[5/10/2025, 9:22:32 AM]</i> 👉 <b>👤 User</b>:
 
 That’s nearly it but I also want to add robust error management and centralized logging, consider the following and provide updated prompts respectively:
 
@@ -3276,11 +3276,12 @@ Potential Gaps in Your Listed Tools (and how to fill them):
 Does Your Prompt Need Updating?
 No, your prompt is actually quite good. It lists the desired components and asks how to make them work together for a specific purpose (error management, logging, observability). It's broad enough to allow for this comprehensive answer covering architecture and integration<br>
 
-<i>[5/10/2025, 9:22:33 AM]</i> 👉 <b>🤖 Assistant</b>: 
+<i>[5/10/2025, 9:22:33 AM]</i> 👉 <b>🤖 Assistant</b>:
 
 You've mapped out an excellent, enterprise-grade observability and error-handling architecture. Here’s a refined set of **system design prompts** tailored to your robust goals, broken down by **backend**, **frontend**, and **telemetry infrastructure**, incorporating all your additions (correlation IDs, centralized structured logging, error standardization, etc.).
 
 ---
+######################## wiring
 
 ### **1. Backend (FastAPI + Loguru + OpenTelemetry) System Prompt**
 > **Design a Python FastAPI backend architecture that implements the following:**
@@ -3341,7 +3342,7 @@ You've mapped out an excellent, enterprise-grade observability and error-handlin
 Would you like companion **code templates or scaffolds** for these prompts (e.g., middleware snippet, Loguru-OTel bridge skeleton, frontend error logger)?<br>
 
 <i>[5/10/2025, 9:23:09 AM]</i> 👉 <b>👤 User</b>: Yes<br>
-<i>[5/10/2025, 9:23:10 AM]</i> 👉 <b>🤖 Assistant</b>: 
+<i>[5/10/2025, 9:23:10 AM]</i> 👉 <b>🤖 Assistant</b>:
 
 Excellent. Here's a **revised set of prompts**—tailored for **code generation, tool integration, and infrastructure configuration**—based on your expanded architecture emphasizing **robust error handling, correlation ID tracing, and centralized observability**.
 

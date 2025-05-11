@@ -1,0 +1,43 @@
+{
+  "python.testing.pytestArgs": [
+    "backend/tests",
+    "--cov=ainative",
+    "--cov-report=html",
+    "--cov-report=term-missing"
+  ],
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true,
+  "python.linting.ruffEnabled": true,
+  "python.linting.enabled": true,
+  "python.formatting.provider": "none", // Assuming Ruff handles formatting via editor.formatOnSave
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.ruff": "explicit"
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/*.pyc": true,
+    "**/__pycache__": true,
+    ".mypy_cache/": true,
+    ".pytest_cache/": true,
+    ".ruff_cache/": true,
+    "backend/.venv/": true,
+    "backend/cov_html/": true,
+    "backend/coverage.xml": true,
+    "backend/pytest-report.xml": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true,
+    "backend/.venv/": true,
+    "backend/cov_html/": true,
+    "backend/coverage.xml": true,
+    "backend/pytest-report.xml": true
+  }
+}

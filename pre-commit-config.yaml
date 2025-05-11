@@ -1,0 +1,52 @@
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+    -   id: trailing-whitespace
+    -   id: end-of-file-fixer
+    -   id: check-yaml
+    -   id: check-json
+    -   id: check-toml
+    -   id: check-added-large-files
+    -   id: detect-private-key
+
+-   repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.4.4 # Use the latest version
+    hooks:
+    -   id: ruff
+        args: [--fix, --exit-non-zero-on-fix]
+    -   id: ruff-format
+
+-   repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.10.0 # Use the latest version
+    hooks:
+    -   id: mypy
+        # Pass the pyproject.toml to mypy for configuration
+        args:
+          - --config-file=backend/pyproject.toml
+        additional_dependencies: [
+            "types-PyYAML", # Add types for libraries as needed
+            "pydantic",
+            "fastapi"
+            # Add other libraries that require type stubs for mypy
+            ]
+        # It's often better to configure exclude paths in pyproject.toml [tool.mypy]
+
+# You can add a pre-commit hook for pytest if you want to run tests
+# before each commit, but this can be slow. Often, tests are run in CI.
+# -   repo: local
+#     hooks:
+#     -   id: pytest
+#         name: pytest
+#         entry: poetry run pytest -m "not slow and not integration" # Example: run only fast unit tests
+#         language: system
+#         pass_filenames: false
+#         always_run: true
+#         # Ensure pytest is installed in the environment where pre-commit runs
+#         # Or use a specific environment for the hook:
+#         # environment:
+#         #   python: 3.10
+#         #   dependencies:
+#         #     - pytest
+#         #     - -e ./backend # Install your project
+#         files: ^backend/src/|^backend/tests/
