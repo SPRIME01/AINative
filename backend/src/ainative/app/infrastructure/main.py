@@ -1,6 +1,7 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Response
 from fastapi.middleware.cors import CORSMiddleware
 import logging
+from typing import Any, Dict
 
 # Configure basic logging
 logging.basicConfig(level=logging.INFO)
@@ -41,41 +42,58 @@ async def shutdown_event():
     # Potentially close database connections, cleanup resources, etc.
 
 @app.get("/", tags=["General"])
-async def read_root():
-    '''
+async def read_root() -> Dict[str, str]:
+    """
     Root endpoint for the API.
-    Returns a welcome message.
-    '''
+
+    Returns:
+        dict: A welcome message.
+
+    Example:
+        >>> import httpx
+        >>> response = httpx.get("http://localhost:8000/")
+        >>> response.json()
+        {'message': 'Welcome to the Edge AI Orchestrator API!'}
+    """
     logger.info("Root endpoint accessed.")
     return {"message": "Welcome to the Edge AI Orchestrator API!"}
 
 @app.get("/health", tags=["General"])
-async def health_check():
-    '''
+async def health_check() -> Dict[str, str]:
+    """
     Health check endpoint.
-    Returns the operational status of the API.
-    '''
+
+    Returns:
+        dict: The operational status of the API.
+
+    Example:
+        >>> import httpx
+        >>> response = httpx.get("http://localhost:8000/health")
+        >>> response.json()
+        {'status': 'ok'}
+    """
     logger.info("Health check endpoint accessed.")
     return {"status": "ok"}
 
-# Stub for Prometheus metrics endpoint
 @app.get("/metrics", tags=["Monitoring"])
-async def metrics():
-    '''
-    Prometheus metrics endpoint.
-    This endpoint should be implemented to expose application metrics.
-    # Example:
-    # from prometheus_client import generate_latest, REGISTRY
-    # from fastapi import Response
-    # return Response(media_type="text/plain", content=generate_latest(REGISTRY))
-    '''
+async def metrics() -> Any:
+    """
+    Prometheus metrics endpoint stub.
+
+    Returns:
+        dict: A message indicating the endpoint is not yet implemented.
+
+    Example:
+        >>> import httpx
+        >>> response = httpx.get("http://localhost:8000/metrics")
+        >>> response.json()
+        {'message': 'Metrics endpoint not yet implemented. TODO: Expose Prometheus metrics.'}
+
+    TODO:
+        Implement Prometheus metrics exposition using prometheus_client.
+    """
     logger.info("Metrics endpoint accessed.")
     # TODO: Implement Prometheus metrics exposition
-    # from prometheus_client import generate_latest, REGISTRY, Counter
-    # from fastapi import Response
-    # c = Counter('my_failures', 'Description of counter')
-    # c.inc() # Increment by 1
-    # return Response(media_type="text/plain", content=generate_latest(REGISTRY))
     return {"message": "Metrics endpoint not yet implemented. TODO: Expose Prometheus metrics."}
 
 # Example of a simple agent-related endpoint (illustrative)
