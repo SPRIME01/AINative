@@ -34,7 +34,7 @@ dependencies = [
     "python-dotenv",
     "litellm",
     "openai",
-    "tritonclient[all]"
+    "tritonclient"
 ]
 
 [build-system]
