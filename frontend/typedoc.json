@@ -1,0 +1,15 @@
+{
+  "entryPoints": [
+    "src/main.tsx",
+    "src/services/",
+    "src/hooks/",
+    "src/components/",
+    "src/types/"
+  ],
+  "out": "../docs/frontend/typedoc",
+  "theme": "default",
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "excludeExternals": true,
+  "includeVersion": true
+}
