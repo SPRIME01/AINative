@@ -6,11 +6,11 @@ This document outlines the weekly routine for utilizing the Edge AI agents effec
 ## Weekly Routine Schedule
 
 ### Weekly Review Session
-**Day:** Sunday or Monday Morning  
-**Time:** 9:00 AM – 10:30 AM  
+**Day:** Sunday or Monday Morning
+**Time:** 9:00 AM – 10:30 AM
 **Participants:** Strategist, Planner, Guardian
 
-**Purpose:**  
+**Purpose:**
 To evaluate progress against objectives, realign priorities, and identify areas for improvement.
 
 **Tasks:**
@@ -19,11 +19,11 @@ To evaluate progress against objectives, realign priorities, and identify areas 
 - Discuss and document lessons learned from the previous week.
 
 ### Capability Expansion Session
-**Day:** Monday  
-**Time:** 10:30 AM – 12:00 PM  
+**Day:** Monday
+**Time:** 10:30 AM – 12:00 PM
 **Participants:** Research Agent, Builder Agent
 
-**Purpose:**  
+**Purpose:**
 To explore new tools, update agent capabilities, and enhance the overall system.
 
 **Tasks:**
@@ -32,11 +32,11 @@ To explore new tools, update agent capabilities, and enhance the overall system.
 - Document any new tools or techniques for future reference.
 
 ### Systemic Improvement Session
-**Day:** Tuesday  
-**Time:** 2:00 PM – 3:30 PM  
+**Day:** Tuesday
+**Time:** 2:00 PM – 3:30 PM
 **Participants:** Critic, Guardian
 
-**Purpose:**  
+**Purpose:**
 To identify personal bottlenecks, over-engineered workflows, or technical debt.
 
 **Tasks:**
@@ -45,11 +45,11 @@ To identify personal bottlenecks, over-engineered workflows, or technical debt.
 - Document findings and recommendations for future implementation.
 
 ### Knowledge Consolidation Session
-**Day:** Wednesday  
-**Time:** 1:00 PM – 2:30 PM  
+**Day:** Wednesday
+**Time:** 1:00 PM – 2:30 PM
 **Participants:** Librarian Agent
 
-**Purpose:**  
+**Purpose:**
 To build connections across weekly notes and generate knowledge maps.
 
 **Tasks:**
@@ -58,11 +58,11 @@ To build connections across weekly notes and generate knowledge maps.
 - Summarize key insights and share with the team.
 
 ### Planning Session
-**Day:** Thursday  
-**Time:** 3:00 PM – 4:30 PM  
+**Day:** Thursday
+**Time:** 3:00 PM – 4:30 PM
 **Participants:** Strategist, Planner
 
-**Purpose:**  
+**Purpose:**
 To prepare for the upcoming week and set clear objectives.
 
 **Tasks:**
@@ -71,11 +71,11 @@ To prepare for the upcoming week and set clear objectives.
 - Ensure all agents are aligned with the strategic vision.
 
 ### Reflection and Feedback Session
-**Day:** Friday  
-**Time:** 4:00 PM – 5:00 PM  
+**Day:** Friday
+**Time:** 4:00 PM – 5:00 PM
 **Participants:** All Agents
 
-**Purpose:**  
+**Purpose:**
 To reflect on the week’s activities and gather feedback for continuous improvement.
 
 **Tasks:**

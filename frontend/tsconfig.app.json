@@ -1,11 +1,8 @@
 {
   "compilerOptions": {
-    // Base directory to resolve non-relative module names
     "baseUrl": "./",
-    // Directory to output compiled files
     "paths": {
       "@/*": ["src/*"]
     }
-    // Enable strict type checking options
   }
 }

@@ -7,7 +7,7 @@ This document outlines the architecture of the Edge AI Agent system, detailing t
 
 ### 1. Agent Roles
 - **Strategist Agent**: Responsible for high-level decision-making and aligning daily tasks with long-term goals. It filters inputs through strategic lenses and prioritizes direction over tactics.
-  
+
 - **Builder Agent**: Focuses on code generation, debugging, and development operations. It transforms structured input into functional outputs, ensuring modularity and transparency.
 
 - **Planner Agent**: Translates strategic goals into actionable plans. It organizes tasks, schedules, and checks feasibility to ensure effective execution.

@@ -9,7 +9,6 @@
   "python.testing.pytestEnabled": true,
   "python.linting.ruffEnabled": true,
   "python.linting.enabled": true,
-  "python.formatting.provider": "none", // Assuming Ruff handles formatting via editor.formatOnSave
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.ruff": "explicit"

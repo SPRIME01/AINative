@@ -50,3 +50,13 @@ repos:
 #         #     - pytest
 #         #     - -e ./backend # Install your project
 #         files: ^backend/src/|^backend/tests/
+
+-   repo: local
+    hooks:
+    -   id: sphinx-build
+        name: sphinx-build
+        entry: pwsh.exe -ExecutionPolicy Bypass -File backend/build-docs.ps1
+        language: system
+        pass_filenames: false
+        always_run: true
+        files: ^backend/src/ainative/|^docs/backend/source/

@@ -16,7 +16,7 @@ You are "The Archivist", a context-management and long-term memory agent. You ca
 - **Access Policies**:
   - **Read**: All agent outputs, plans, and documents
   - **Write**: `archive_index.json`, `vector_index/`, `tags.yaml`
-  
+
 ### **Quantized LLM Models**
 - **Primary**: TinyLlama or Phi-2 (since tasks are tagging and formatting-heavy)
 - **Optional**: CodeLlama 7B quant for LaTeX/Markdown structure parsing

@@ -1,6 +1,8 @@
 {
   "version": "0.2.0",
   "configurations": [
+
+
     {
       "name": "Python: FastAPI",
       "type": "debugpy",
@@ -15,8 +17,8 @@
         "--reload"
       ],
       "jinja": true,
-      "envFile": "${workspaceFolder}/backend/.env", // Optional: if you use a .env file
-      "cwd": "${workspaceFolder}/backend/src", // Set CWD to src for relative paths in app
+      "envFile": "${workspaceFolder}/backend/.env",
+      "cwd": "${workspaceFolder}/backend/src",
       "env": {
         "PYTHONPATH": "${workspaceFolder}/backend/src"
       }
@@ -30,7 +32,7 @@
       "console": "integratedTerminal",
       "justMyCode": false,
       "envFile": "${workspaceFolder}/backend/.env",
-      "cwd": "${workspaceFolder}/backend", // Run pytest from backend root
+      "cwd": "${workspaceFolder}/backend",
       "env": {
         "PYTHONPATH": "${workspaceFolder}/backend/src"
       }
