@@ -1,6 +1,7 @@
 """
 Custom application exceptions and FastAPI exception handlers.
 """
+import logging  # Added import
 from fastapi import HTTPException, Request
 from fastapi.responses import JSONResponse
 from pydantic import ValidationError  # Assuming this is Pydantic v2
@@ -9,6 +10,9 @@ from starlette.status import (
     HTTP_500_INTERNAL_SERVER_ERROR,
 )
 from typing import Any, Dict
+
+# Added logger instance
+logger = logging.getLogger(__name__)
 
 # TODO: Integrate with a proper logging library (e.g., Loguru) as per project standards.
 
@@ -28,35 +32,38 @@ class AppException(Exception):
 
 async def generic_exception_handler(request: Request, exc: Exception) -> JSONResponse:
     """
-    Handles generic, unhandled exceptions.
-
-    :param request: The incoming request.
-    :type request: Request
-    :param exc: The exception that was raised.
-    :type exc: Exception
-    :return: A JSONResponse with a 500 status code and error details.
-    :rtype: JSONResponse
+    Handles any other unhandled Exception.
+    Logs the error and returns a generic 500 response.
     """
-    correlation_id = getattr(request.state, "correlation_id", "not-set")
-    # logger.error(f"Unhandled exception: {exc}", exc_info=True, correlation_id=correlation_id) # Example real logging
+    correlation_id = getattr(request.state, "correlation_id", "N/A")
+    error_details: Dict[str, Any] = {
+        "type": "/errors/internal-server-error",
+        "title": "Internal Server Error",
+        "status": HTTP_500_INTERNAL_SERVER_ERROR,
+        "detail": "An unexpected error occurred.",
+        "instance": str(request.url),
+        "correlation_id": correlation_id,
+    }
 
-    # For test compatibility, mimicking behavior of setting last_error_log on app.state
-    # In a real app, this might not be necessary or done differently.
+    # Interact with the test mock if present
     if hasattr(request.app.state, "last_error_log"):
-        request.app.state.last_error_log = {
-            "type": "unhandled", "exc": str(exc), "correlation_id": correlation_id, "stack_trace": "..." # Actual stack trace in real log
-        }
-    return JSONResponse(
-        status_code=HTTP_500_INTERNAL_SERVER_ERROR,
-        content={
-            "type": "/errors/internal-server-error",
-            "title": "Internal Server Error",
-            "status": HTTP_500_INTERNAL_SERVER_ERROR,
-            "detail": "An unexpected error occurred. Please try again later.",
-            "instance": str(request.url),
+        request.app.state.last_error_log = { # type: ignore
+            "message": "Unhandled generic exception caught by handler",
+            "exc_info": exc, # Store the exception instance
             "correlation_id": correlation_id,
+            "error_details": error_details # Store the structured error for assertion
+        }
+
+    logger.error(
+        "Unhandled generic exception occurred",
+        exc_info=exc, # This ensures the full traceback is logged by the logger
+        extra={
+            "correlation_id": correlation_id,
+            "request_url": str(request.url),
+            # Avoid logging the full error_details dict again if it's already in the main message or too verbose
         },
     )
+    return JSONResponse(status_code=HTTP_500_INTERNAL_SERVER_ERROR, content=error_details)
 
 async def http_exception_handler(request: Request, exc: HTTPException) -> JSONResponse:
     """
