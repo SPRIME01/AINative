@@ -3,7 +3,7 @@ from fastapi import FastAPI
 # Assuming your project structure allows this import path
 # If your endpoints directory is directly under 'app', this should work.
 # Adjust if your 'api' directory is structured differently.
-from app.api.endpoints import logging as logging_api 
+from app.api.endpoints import logging as logging_api
 from app.core.logging_config import setup_logging # Assuming you have this for backend logging setup
 # Import other routers and configurations as needed
 
