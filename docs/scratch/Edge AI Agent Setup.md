@@ -3473,14 +3473,6 @@ Would you like me to generate any of these codebases or YAML configs right now?<
 
 <div align="center">
 
-### Made with Echoes by R2bits
-
-<a href="https://echoes.r2bits.com">
-  <img src="https://images.squarespace-cdn.com/content/v1/6493af4741c13939d335f0b8/18b27467-2da2-43b7-8d44-234bccf4f462/MINI_ECHOES_LOGO_NORMAL_WHITE_TEXT_SMALL-05-14+%281%29.png?format=300w" alt="Echoes Logo" width="200"/>
-</a>
-
-</div>
-
 ---
 
 <div style="display: flex; justify-content: space-between;">
