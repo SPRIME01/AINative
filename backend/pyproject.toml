@@ -28,13 +28,14 @@ dependencies = [
     "tailwindcss",
     "uvicorn[standard]",
     "loguru",
-    "opentelemetry-sdk",
-    "opentelemetry-instrumentation-fastapi",
-    "opentelemetry-exporter-otlp",
+    "opentelemetry-sdk>=1.33.0",
+    "opentelemetry-instrumentation-fastapi>=0.43b0",
+    "opentelemetry-exporter-otlp-proto-grpc>=1.22.0",
     "python-dotenv",
     "litellm",
     "openai",
-    "tritonclient"
+    "tritonclient",
+    "opentelemetry-api>=1.22.0",
 ]
 
 [build-system]

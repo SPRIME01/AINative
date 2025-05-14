@@ -6,6 +6,7 @@ from fastapi import FastAPI
 from app.api.endpoints import logging as logging_api
 from app.core.logging_config import setup_logging # Assuming you have this for backend logging setup
 # Import other routers and configurations as needed
+from ainative.app.core.opentelemetry_config import setup_opentelemetry # OpenTelemetry setup
 
 # Example: Initialize backend logging
 # This should ideally be called once when the application starts.
@@ -20,6 +21,12 @@ app = FastAPI(
     version="0.1.0",
     # Add other FastAPI configurations like middleware, exception handlers, etc.
 )
+
+# Setup OpenTelemetry
+# This should be called early in the application lifecycle.
+# Ensure OTEL_SERVICE_NAME and exporter endpoints are set in your environment.
+setup_opentelemetry(app)
+
 
 # Include the frontend logging router
 # The prefix="/api/v1" means all routes in logging_api.router

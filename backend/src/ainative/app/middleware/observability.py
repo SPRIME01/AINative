@@ -22,11 +22,17 @@ class ObservabilityMiddleware(BaseHTTPMiddleware):
         setattr(request.app.state, "logger_context", {"correlation_id": correlation_id})
         setattr(request.app.state, "otel_propagated", True)
 
+        # Handle traceparent header for OpenTelemetry
+        traceparent = request.headers.get("traceparent")
+        if not traceparent:
+            traceparent = f"00-{str(uuid.uuid4()).replace('-', '')}{str(uuid.uuid4()).replace('-', '')[:16]}-{str(uuid.uuid4()).replace('-', '')[:16]}-01"
+
         current_response: Response
         try:
             current_response = await call_next(request)
-            # Add X-Correlation-ID to the normal response
+            # Add X-Correlation-ID and traceparent to the response
             current_response.headers["X-Correlation-ID"] = correlation_id
+            current_response.headers["traceparent"] = traceparent
         except Exception as e:
             # Log exceptions that occur before they reach FastAPI's own error handlers
             logger.error(

@@ -1,0 +1,52 @@
+receivers:
+  otlp:
+    protocols:
+      grpc:
+      http:
+
+exporters:
+  logging:
+    loglevel: debug
+
+  # Jaeger exporter for traces
+  jaeger:
+    endpoint: "jaeger-all-in-one:14250" # Default Jaeger gRPC endpoint
+    tls:
+      insecure: true # Set to false and configure TLS if Jaeger requires it
+
+  # Prometheus exporter for metrics
+  prometheus:
+    endpoint: "0.0.0.0:8889" # Endpoint for Prometheus to scrape metrics from the Collector
+    namespace: "ainative_backend"
+
+  # Loki exporter for logs
+  loki:
+    endpoint: "http://loki:3100/loki/api/v1/push" # Default Loki endpoint
+    # Optional: Add labels for Loki
+    # labels:
+    #   resource:
+    #     "service.name": "service_name"
+    #     "job": "job_name"
+
+processors:
+  batch:
+  # Optional: Add other processors like memory_limiter, attributes, etc.
+  # memory_limiter:
+  #   check_interval: 1s
+  #   limit_percentage: 75
+  #   spike_limit_percentage: 15
+
+service:
+  pipelines:
+    traces:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [jaeger, logging] # Export to Jaeger and console logging
+    metrics:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [prometheus, logging] # Export to Prometheus and console logging
+    logs:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [loki, logging] # Export to Loki and console logging
