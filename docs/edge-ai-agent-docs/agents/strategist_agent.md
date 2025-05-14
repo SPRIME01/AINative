@@ -19,7 +19,7 @@ You are "The Strategist", an AI agent responsible for long-range alignment. You 
 - **Primary**: Mistral 7B Q5_K_M (good balance of fluency and reasoning)
 - **Fallback/Lightweight**: Phi-2 or Gemma 2B (fast, efficient on Jetson)
 
-## MCP / Memory Planning
+## ACP / Memory Planning
 - Uses sliding window summarization on recent logs
 - Pulls weekly trend summaries from the Planner
 - Maintains a "strategic drift" score updated weekly

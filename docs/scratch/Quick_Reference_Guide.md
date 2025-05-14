@@ -52,7 +52,7 @@ This quick reference guide provides an at-a-glance summary of the Edge AI Agent 
 - **Grounding**: Created using cognitive and intellectual artifacts
 - **Assignment**: Can be assigned to projects, tasks, artifacts
 
-### Model Context Protocol (MCP)
+###  (ACP)
 
 - **Input Pruning**: Selecting relevant information for context windows
 - **Summarization**: Condensing information for long-term retention
@@ -154,14 +154,14 @@ This quick reference guide provides an at-a-glance summary of the Edge AI Agent 
 - [ ] Configure model sharing
 - [ ] Implement lazy loading
 - [ ] Set up monitoring
-- [ ] Optimize MCP for each agent
+- [ ] Optimize ACP for each agent
 
 ## Quick Tips
 
 1. **Start Simple**: Begin with core agents before adding custom agents
 2. **Model Selection**: Match models to agent roles and tasks
 3. **Resource Management**: Monitor and manage GPU usage carefully
-4. **Context Optimization**: Tune MCP for each agent's specific needs
+4. **Context Optimization**: Tune ACP for each agent's specific needs
 5. **Security**: Implement proper access control for artifacts
 6. **Testing**: Test agent interactions in controlled environments first
 7. **Documentation**: Keep documentation of custom agents up to date
@@ -173,7 +173,7 @@ This quick reference guide provides an at-a-glance summary of the Edge AI Agent 
 - **Adapter**: Implementation of a port interface
 - **Case File**: Storage structure for project artifacts
 - **Hexagonal Architecture**: Architecture with core logic separated from external dependencies
-- **MCP**: Model Context Protocol for managing agent memory and context
+- **ACP**:  for managing agent memory and context
 - **Port**: Abstract interface defining interaction capabilities
 - **SmolAgent**: Lightweight agent implementation for custom agents
 

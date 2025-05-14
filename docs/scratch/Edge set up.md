@@ -133,7 +133,7 @@ Use **GGUF** format via **llama.cpp** or **TensorRT-LLM** for maximum performanc
 ## 🕵️ Agent Specifications (Example: Strategist Agent)
 
 **Improved Prompt Guiding Agent Specification:**
-> Given the edge deployment constraints of a Jetson AGX Orin 64GB Dev Kit and my intention to build a local team of quantized LLM-powered agents, define the **system prompts**, **tools**, **capabilities**, and any memory/context planning (MCP) configurations** for each of the previously defined agents. These agents should be optimized for performance, clarity of role, and efficient local resource usage. Provide detailed specifications for two agents at a time. Include:
+> Given the edge deployment constraints of a Jetson AGX Orin 64GB Dev Kit and my intention to build a local team of quantized LLM-powered agents, define the **system prompts**, **tools**, **capabilities**, and any memory/context planning (ACP) configurations** for each of the previously defined agents. These agents should be optimized for performance, clarity of role, and efficient local resource usage. Provide detailed specifications for two agents at a time. Include:
 > - Agent Name and Role Summary
 > - System Prompt (MECE, role-specific, minimal hallucination risk)
 > - Tooling (files, APIs, scripts, agents, functions, vector DBs, etc.)
@@ -160,7 +160,7 @@ Use **GGUF** format via **llama.cpp** or **TensorRT-LLM** for maximum performanc
 -   **Primary**: Mistral 7B Q5_K_M (good balance of fluency and reasoning)
 -   **Fallback/Lightweight**: Phi-2 or Gemma 2B (fast, efficient on Jetson)
 
-**MCP / Memory Planning**:
+**ACP / Memory Planning**:
 -   Uses sliding window summarization on recent logs
 -   Pulls weekly trend summaries from the Planner
 -   Maintains a "strategic drift" score updated weekly

@@ -206,6 +206,398 @@ Agents communicate using their configured A2A (Agent-to-Agent) port adapters wit
 3. **Request-Response**: Sequential request and response interaction
 4. **Event-Driven**: Reacting to events from sources
 
+#### A2A Port Interface
+
+The Agent-to-Agent communication is abstracted through the `A2APort` interface:
+
+```python
+class A2APort(Protocol):
+    """Abstract interface for agent-to-agent communication."""
+
+    def send_message(self, message: Dict[str, Any], recipient_id: str) -> bool:
+        """Send a message to another agent."""
+        ...
+
+    def receive_messages(self) -> List[Dict[str, Any]]:
+        """Retrieve messages sent to this agent."""
+        ...
+```
+
+#### Standard Message Format
+
+All inter-agent messages follow a standard format for consistency:
+
+```python
+message = {
+    "message_id": f"msg_{uuid.uuid4().hex}",
+    "sender_id": "agent_a_id",
+    "recipient_id": "agent_b_id",
+    "timestamp": datetime.now(timezone.utc).isoformat(),
+    "message_type": "task_assignment",
+    "payload_type": "application/json",
+    "payload": {
+        # Message-specific content
+    },
+    "metadata": {
+        "priority": "high",
+        "correlation_id": "related_message_id",
+        "ttl": 3600  # Time-to-live in seconds
+    }
+}
+```
+
+#### Communication Adapters
+
+The system provides multiple A2A adapters to support different communication patterns:
+
+1. **Redis-based Pub/Sub Adapter:**
+
+```python
+class RedisPubSubA2AAdapter(A2APort):
+    """Redis Pub/Sub based agent-to-agent communication adapter."""
+
+    def __init__(self, agent_id: str, redis_url: str = "redis://localhost:6379"):
+        self.agent_id = agent_id
+        self.redis_client = redis.from_url(redis_url)
+        self.pubsub = self.redis_client.pubsub(ignore_subscribe_messages=True)
+        self.inbox_channel = f"agent:{self.agent_id}:inbox"
+
+        # Subscribe to agent's inbox channel
+        self.pubsub.subscribe(self.inbox_channel)
+
+    def send_message(self, message: Dict[str, Any], recipient_id: str) -> bool:
+        """Sends a message to the recipient agent's inbox channel via Redis Pub/Sub."""
+        recipient_channel = f"agent:{recipient_id}:inbox"
+
+        # Ensure message has required fields
+        if "message_id" not in message:
+            message["message_id"] = f"msg_{uuid.uuid4().hex}"
+
+        if "sender_id" not in message:
+            message["sender_id"] = self.agent_id
+
+        if "timestamp" not in message:
+            message["timestamp"] = datetime.now(timezone.utc).isoformat()
+
+        try:
+            self.redis_client.publish(recipient_channel, json.dumps(message))
+            return True
+        except Exception as e:
+            logger.error(f"Failed to send message: {str(e)}")
+            return False
+
+    def receive_messages(self) -> List[Dict[str, Any]]:
+        """Receives messages from the agent's inbox channel."""
+        messages = []
+
+        try:
+            # Get all pending messages
+            while True:
+                message = self.pubsub.get_message()
+                if not message:
+                    break
+
+                if "data" in message and isinstance(message["data"], bytes):
+                    try:
+                        data = json.loads(message["data"].decode("utf-8"))
+                        messages.append(data)
+                    except json.JSONDecodeError:
+                        logger.error("Received invalid JSON message")
+
+        except Exception as e:
+            logger.error(f"Error receiving messages: {str(e)}")
+
+        return messages
+```
+
+2. **File-based Communication Adapter:**
+
+```python
+class FileBased_A2A_Adapter(A2APort):
+    """File-based agent-to-agent communication adapter."""
+
+    def __init__(self, agent_id: str, base_dir: str = "/tmp/agent_messages"):
+        self.agent_id = agent_id
+        self.base_dir = base_dir
+        self.inbox_dir = os.path.join(base_dir, agent_id, "inbox")
+        self.outbox_dir = os.path.join(base_dir, agent_id, "outbox")
+
+        # Create directories if they don't exist
+        os.makedirs(self.inbox_dir, exist_ok=True)
+        os.makedirs(self.outbox_dir, exist_ok=True)
+
+    def send_message(self, message: Dict[str, Any], recipient_id: str) -> bool:
+        """Sends a message to another agent by writing to their inbox directory."""
+        if "message_id" not in message:
+            message["message_id"] = f"msg_{uuid.uuid4().hex}"
+
+        if "sender_id" not in message:
+            message["sender_id"] = self.agent_id
+
+        if "timestamp" not in message:
+            message["timestamp"] = datetime.now(timezone.utc).isoformat()
+
+        recipient_inbox = os.path.join(self.base_dir, recipient_id, "inbox")
+        if not os.path.exists(recipient_inbox):
+            os.makedirs(recipient_inbox, exist_ok=True)
+
+        message_path = os.path.join(recipient_inbox, f"{message['message_id']}.json")
+
+        try:
+            with open(message_path, 'w') as f:
+                json.dump(message, f)
+
+            # Also save a copy in our outbox
+            outbox_path = os.path.join(self.outbox_dir, f"{message['message_id']}.json")
+            with open(outbox_path, 'w') as f:
+                json.dump(message, f)
+
+            return True
+        except Exception as e:
+            logger.error(f"Failed to send message: {str(e)}")
+            return False
+
+    def receive_messages(self) -> List[Dict[str, Any]]:
+        """Receives messages by reading files from the agent's inbox directory."""
+        messages = []
+
+        try:
+            for filename in os.listdir(self.inbox_dir):
+                if filename.endswith(".json"):
+                    file_path = os.path.join(self.inbox_dir, filename)
+
+                    with open(file_path, 'r') as f:
+                        message = json.load(f)
+                        messages.append(message)
+
+                    # Optionally move processed messages to avoid re-processing
+                    processed_dir = os.path.join(self.inbox_dir, "processed")
+                    os.makedirs(processed_dir, exist_ok=True)
+                    shutil.move(file_path, os.path.join(processed_dir, filename))
+
+        except Exception as e:
+            logger.error(f"Error receiving messages: {str(e)}")
+
+        return messages
+```
+
+#### Communication Pattern Examples
+
+##### Direct Communication (Point-to-Point)
+
+```python
+# Assume agent_a and agent_b are configured with appropriate A2A adapters
+
+task_payload = {
+    "task_name": "analyze_document",
+    "document_id": "doc_123",
+    "priority": "high"
+}
+
+message = {
+    "message_id": f"msg_{uuid.uuid4().hex}",
+    "sender_id": agent_a.agent_id,
+    "recipient_id": agent_b.agent_id,
+    "timestamp": datetime.now(timezone.utc).isoformat(),
+    "message_type": "task_assignment",
+    "payload_type": "application/json",
+    "payload": task_payload
+}
+
+# Send the message
+if agent_a.communication.send_message(message, agent_b.agent_id):
+    logger.info(f"Task assigned from {agent_a.agent_id} to {agent_b.agent_id}")
+
+# Recipient agent receives the message
+incoming_messages = agent_b.communication.receive_messages()
+for msg in incoming_messages:
+    if msg.get("message_type") == "task_assignment":
+        agent_b.process_task(msg["payload"])
+```
+
+##### Publish-Subscribe Pattern
+
+```python
+# Using Redis PubSub adapter for broadcast communication
+# One publisher, multiple subscribers
+
+# Publisher agent sends a notification
+alert_payload = {
+    "alert_type": "system_update",
+    "severity": "medium",
+    "details": "System upgrade scheduled in 10 minutes."
+}
+
+broadcast_message = {
+    "message_id": f"msg_{uuid.uuid4().hex}",
+    "sender_id": system_agent.agent_id,
+    "recipient_id": "all",  # Special designation for broadcast
+    "timestamp": datetime.now(timezone.utc).isoformat(),
+    "message_type": "system_alert",
+    "payload_type": "application/json",
+    "payload": alert_payload
+}
+
+# Send to a broadcast channel
+redis_client.publish("broadcast:system_alerts", json.dumps(broadcast_message))
+
+# Multiple agents subscribe to the broadcast channel
+for agent in [agent_a, agent_b, agent_c]:
+    agent.subscribe_to_channel("broadcast:system_alerts")
+
+    # Each agent processes the broadcast
+    messages = agent.get_channel_messages("broadcast:system_alerts")
+    for msg in messages:
+        if msg.get("message_type") == "system_alert":
+            agent.handle_system_alert(msg["payload"])
+```
+
+##### Request-Response Pattern
+
+```python
+# Agent A makes a request to Agent B and waits for a response
+
+request_payload = {
+    "query": "What is the current status of project X?",
+    "response_channel": f"response:{agent_a.agent_id}:{uuid.uuid4().hex}"
+}
+
+request_message = {
+    "message_id": f"req_{uuid.uuid4().hex}",
+    "sender_id": agent_a.agent_id,
+    "recipient_id": agent_b.agent_id,
+    "timestamp": datetime.now(timezone.utc).isoformat(),
+    "message_type": "information_request",
+    "payload_type": "application/json",
+    "payload": request_payload,
+    "metadata": {
+        "needs_response": True,
+        "response_channel": request_payload["response_channel"]
+    }
+}
+
+# Send the request
+agent_a.communication.send_message(request_message, agent_b.agent_id)
+
+# Agent B processes the request
+incoming_requests = agent_b.communication.receive_messages()
+for req in incoming_requests:
+    if req.get("message_type") == "information_request" and req.get("metadata", {}).get("needs_response"):
+        # Process the request and prepare response
+        response_data = agent_b.process_information_request(req["payload"]["query"])
+
+        # Send response back through the specified channel
+        response_channel = req["metadata"]["response_channel"]
+        response_message = {
+            "message_id": f"resp_{uuid.uuid4().hex}",
+            "sender_id": agent_b.agent_id,
+            "recipient_id": req["sender_id"],
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "message_type": "information_response",
+            "payload_type": "application/json",
+            "payload": response_data,
+            "metadata": {
+                "in_response_to": req["message_id"]
+            }
+        }
+
+        # Publish the response to the response channel
+        redis_client.publish(response_channel, json.dumps(response_message))
+
+# Agent A waits for and processes the response
+agent_a.subscribe_to_channel(request_payload["response_channel"])
+response = None
+
+# With timeout to avoid infinite waiting
+start_time = time.time()
+timeout = 30  # seconds
+
+while not response and (time.time() - start_time) < timeout:
+    channel_messages = agent_a.get_channel_messages(request_payload["response_channel"])
+    for msg in channel_messages:
+        if msg.get("message_type") == "information_response" and msg.get("metadata", {}).get("in_response_to") == request_message["message_id"]:
+            response = msg["payload"]
+            break
+
+    if not response:
+        time.sleep(0.5)  # Avoid tight polling
+
+if response:
+    agent_a.handle_information_response(response)
+else:
+    logger.warning(f"No response received from {agent_b.agent_id} within timeout period")
+```
+
+##### Event-Driven Pattern
+
+```python
+# Event source emits events that agents can react to
+
+# Event emission
+system_event = {
+    "event_id": f"evt_{uuid.uuid4().hex}",
+    "event_type": "resource_threshold_exceeded",
+    "timestamp": datetime.now(timezone.utc).isoformat(),
+    "source": "system_monitor",
+    "data": {
+        "resource": "memory",
+        "current_usage": 85.4,
+        "threshold": 80.0,
+        "hostname": "edge-device-007"
+    }
+}
+
+# Publish to event channel
+redis_client.publish("events:resource_monitoring", json.dumps(system_event))
+
+# Agent subscribes to relevant event channels and reacts
+agent_monitoring.subscribe_to_channel("events:resource_monitoring")
+
+# Periodic event processing
+def process_resource_events(agent):
+    events = agent.get_channel_messages("events:resource_monitoring")
+    for event in events:
+        if event.get("event_type") == "resource_threshold_exceeded":
+            # Take action based on the event
+            if event["data"]["resource"] == "memory":
+                agent.trigger_memory_optimization(event["data"]["hostname"])
+            elif event["data"]["resource"] == "cpu":
+                agent.adjust_workload_distribution(event["data"]["hostname"])
+
+# Run event processing periodically
+schedule.every(1).minutes.do(process_resource_events, agent_monitoring)
+```
+
+#### Best Practices for Agent Communication
+
+1. **Error Handling**: Implement robust error handling for communication failures
+   - Retry mechanisms for temporary failures
+   - Dead letter queues for undeliverable messages
+   - Logging and alerting for communication issues
+
+2. **Message Delivery Guarantees**:
+   - Implement acknowledgment systems for critical messages
+   - Consider transaction support for multi-step communications
+   - Design for idempotent message handling
+
+3. **Security Considerations**:
+   - Authenticate message senders
+   - Encrypt sensitive payloads
+   - Implement access control for message channels
+   - Sign messages for integrity verification
+
+4. **Performance Optimization**:
+   - Batch non-urgent messages
+   - Implement backpressure mechanisms
+   - Use message compression for large payloads
+   - Set appropriate TTL (Time-to-Live) values
+
+5. **Monitoring and Debugging**:
+   - Log message metadata for traceability
+   - Implement correlation IDs for tracking message chains
+   - Monitor message queues for bottlenecks
+   - Implement circuit breakers for degraded services
+
 ### Agent Configuration
 
 Each agent is configured with:

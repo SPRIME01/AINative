@@ -177,7 +177,7 @@ python-dotenv>=1.0.0
             "guardian_agent.md": "# Guardian Agent\n\n...",
         },
         "concepts": {
-            "model_context_protocol.md": "# Model Context Protocol (MCP)\n\nDetails about the MCP used for agent communication.",
+            "model_context_protocol.md": "#  (ACP)\n\nDetails about the ACP used for agent communication.",
             "runtime_optimization.md": "# Runtime Optimization\n\nTechniques and strategies for optimizing model performance on edge devices.",
         },
         "usage": {

@@ -158,12 +158,12 @@ Here’s a **daily and weekly routine** that integrates your edge agent team to 
 
 Would you like a Mermaid diagram of this schedule or a code scaffold to orchestrate it locally?<br>
 
-<i>[5/8/2025, 2:02:29 PM]</i> 👉 <b>👤 User</b>: What would be the system prompt for each agent and what types of tools ( MCP ) should they have access to, etc . Provide the information for a couple of the agents at a time until I get all. Improve my prompt then respond to the improved prompt <br>
+<i>[5/8/2025, 2:02:29 PM]</i> 👉 <b>👤 User</b>: What would be the system prompt for each agent and what types of tools ( ACP ) should they have access to, etc . Provide the information for a couple of the agents at a time until I get all. Improve my prompt then respond to the improved prompt <br>
 <i>[5/8/2025, 2:02:29 PM]</i> 👉 <b>🤖 Assistant</b>:
 
 ### **Improved Prompt:**
 
-> Given the edge deployment constraints of a Jetson AGX Orin 64GB Dev Kit and my intention to build a local team of quantized LLM-powered agents, define the **system prompts**, **tools**, **capabilities**, and any memory/context planning (MCP) configurations** for each of the previously defined agents. These agents should be optimized for performance, clarity of role, and efficient local resource usage. Provide detailed specifications for two agents at a time. Include:
+> Given the edge deployment constraints of a Jetson AGX Orin 64GB Dev Kit and my intention to build a local team of quantized LLM-powered agents, define the **system prompts**, **tools**, **capabilities**, and any memory/context planning (ACP) configurations** for each of the previously defined agents. These agents should be optimized for performance, clarity of role, and efficient local resource usage. Provide detailed specifications for two agents at a time. Include:
 > - Agent Name and Role Summary
 > - System Prompt (MECE, role-specific, minimal hallucination risk)
 > - Tooling (files, APIs, scripts, agents, functions, vector DBs, etc.)
@@ -194,7 +194,7 @@ Would you like a Mermaid diagram of this schedule or a code scaffold to orchestr
 - **Primary**: Mistral 7B Q5_K_M (good balance of fluency and reasoning)
 - **Fallback/Lightweight**: Phi-2 or Gemma 2B (fast, efficient on Jetson)
 
-#### **MCP / Memory Planning**:
+#### **ACP / Memory Planning**:
 - Uses sliding window summarization on recent logs
 - Pulls weekly trend summaries from the Planner
 - Maintains a "strategic drift" score updated weekly
@@ -226,7 +226,7 @@ Would you like a Mermaid diagram of this schedule or a code scaffold to orchestr
 - **Primary**: Deepseek Coder 6.7B Q5_K_M (excellent code generation)
 - **Fallback**: TinyLlama 1.1B or Phi-2 (lighter models for quick lookups)
 
-#### **MCP / Memory Planning**:
+#### **ACP / Memory Planning**:
 - Stores `build_context.json` scoped per project
 - Embeds and indexes past solutions for reuse
 - Can surface reusable components during planning phase
@@ -239,12 +239,12 @@ Would you like a Mermaid diagram of this schedule or a code scaffold to orchestr
 
 Would you like to continue with **Planner + Critic** next, or focus on setting up a lightweight orchestrator for managing these agents locally?<br>
 
-<i>[5/8/2025, 2:08:50 PM]</i> 👉 <b>👤 User</b>: By MCP you refer to model context protocol, correct?<br>
+<i>[5/8/2025, 2:08:50 PM]</i> 👉 <b>👤 User</b>: By ACP you refer to , correct?<br>
 <i>[5/8/2025, 2:08:51 PM]</i> 👉 <b>🤖 Assistant</b>:
 
-Great question—and yes, in this case **MCP refers to "Model Context Protocol"**, not "Memory Control Plane" or other possible interpretations.
+Great question—and yes, in this case **ACP refers to ""**, not "Memory Control Plane" or other possible interpretations.
 
-Specifically, I’m using **MCP** to mean:
+Specifically, I’m using **ACP** to mean:
 
 > **The structured method by which an agent manages its context window and persistent memory**—including how it summarizes, retrieves, and references previous information across sessions.
 
@@ -258,7 +258,7 @@ This is essential for edge AI, since:
 - You’re working with quantized models that often have smaller context windows (2k–8k tokens).
 - You likely want persistent intelligence across sessions (e.g., your Strategist "remembers" your yearly OKRs without refeeding them each time).
 
-Want me to formalize a sample MCP structure for one of your agents?<br>
+Want me to formalize a sample ACP structure for one of your agents?<br>
 
 <i>[5/8/2025, 2:10:49 PM]</i> 👉 <b>👤 User</b>: Ok you only provided agents 1 and 2 , let’s continue with the remaining ones <br>
 <i>[5/8/2025, 2:10:49 PM]</i> 👉 <b>🤖 Assistant</b>:
@@ -288,7 +288,7 @@ Perfect—let’s continue with **Agents 3 and 4** from the original MECE struct
 - **Primary**: Phi-2 (efficient, ideal for shorter-context task planning)
 - **Secondary**: Gemma 2B Q (slightly more capacity if Phi-2 lacks resolution)
 
-### **MCP (Model Context Protocol)**:
+### **ACP ()**:
 - Stores:
   - `plan_cache.json`: Current plan hierarchy + history
   - `task_embeddings.vdb`: Vector store of past task patterns, tags
@@ -321,7 +321,7 @@ Perfect—let’s continue with **Agents 3 and 4** from the original MECE struct
 - **Primary**: Mistral 7B Q5_K_M (superior reasoning and critique ability)
 - **Fallback**: DeepSeek 1.3B or LLaMA 3 8B quantized (if local)
 
-### **MCP**:
+### **ACP**:
 - Maintains:
   - `critique_embeddings.vdb`: Vector search for common logic gaps, design errors
   - Uses `rule_checklist.yaml` as an evolving prompt modifier
@@ -363,7 +363,7 @@ Excellent—let’s continue with **Agent 5: The Synthesizer** and **Agent 6: Th
 - **Primary**: Mistral 7B Q4_K_M (for strong summarization and abstraction)
 - **Optional**: Yi 6B Q (for slightly more verbose, Chinese-origin-style synthesis)
 
-### **MCP (Model Context Protocol)**:
+### **ACP ()**:
 - Stores:
   - `summary_cache.json`: Indexed by topic, time, and project
   - `semantic_embeddings.vdb`: Uses vector DB to detect thematic overlaps
@@ -400,7 +400,7 @@ Excellent—let’s continue with **Agent 5: The Synthesizer** and **Agent 6: Th
 - **Primary**: TinyLlama or Phi-2 (since tasks are tagging and formatting-heavy)
 - **Optional**: CodeLlama 7B quant for LaTeX/Markdown structure parsing
 
-### **MCP**:
+### **ACP**:
 - Indexes:
   - Metadata per document (author, agent, type, date)
   - Semantic embeddings via `embedding.vdb`
@@ -446,7 +446,7 @@ Perfect. Let’s wrap the core octet with **Agent 7: The Builder** and **Agent 8
 - **Primary**: Code LLaMA 7B Q5_K_M (optimized for fast local code generation)
 - **Fallback**: DeepSeek Coder 6B or Mistral instruct for non-code logic
 
-### **MCP (Model Context Protocol)**:
+### **ACP ()**:
 - Maintains:
   - `build_history.json`: Tracks previous code tasks and diffs
   - `template_snippets.md`: A personal code snippet library
@@ -480,7 +480,7 @@ Perfect. Let’s wrap the core octet with **Agent 7: The Builder** and **Agent 8
 - **Primary**: TinyLlama or Phi-2 (for rapid parsing, small context)
 - **Optional**: Mistral 7B Q4 for event correlation and system-wide pattern detection
 
-### **MCP**:
+### **ACP**:
 - Tracks:
   - `anomaly_log.json`: Flags, timestamps, context
   - Rolling summaries of agent performance
@@ -534,7 +534,7 @@ Excellent. With your interest in A2A communication, lightweight compositional fr
 │ └───────────────────────────────────────────────────────────────────┘ │
 │                                                                       │
 │ ┌───────────────────────────────────────────────────────────────────┐ │
-│ │                     Agent Memory and Context (MCP)                │ │
+│ │                     Agent Memory and Context (ACP)                │ │
 │ │ - Per-agent context files (YAML + embeddings + system logs)      │ │
 │ │ - Shared memory db: SQLite, Weaviate, or Chroma                  │ │
 │ │ - Embedding index: for retrieval-based memory (via Synthesizer) │ │
@@ -594,7 +594,7 @@ agent_script: |
 
 ---
 
-## **D. Practical MCP (Model Context Protocol)**
+## **D. Practical ACP ()**
 
 Each agent maintains its own context in:
 ```
@@ -884,7 +884,7 @@ Would you like me to now:
 **or**
 - Build a **Bash/Python deployment script** that launches Ollama, Triton, and LiteLLM with checks?<br>
 
-<i>[5/8/2025, 8:51:28 PM]</i> 👉 <b>👤 User</b>: Is the agent layer vendor neural and agnostic , maybe using ports and adapters, depency injection etc. does the A2A protocol come into play there? Where does model context protocol (MCP) fit in?<br>
+<i>[5/8/2025, 8:51:28 PM]</i> 👉 <b>👤 User</b>: Is the agent layer vendor neural and agnostic , maybe using ports and adapters, depency injection etc. does the A2A protocol come into play there? Where does  (ACP) fit in?<br>
 <i>[5/8/2025, 8:51:28 PM]</i> 👉 <b>🤖 Assistant</b>:
 
 You're asking the right questions to build a robust, extensible architecture. Let’s break it down clearly and structurally so you can design your agent layer to be:
@@ -932,9 +932,9 @@ For a LangGraph-style setup, you’d model this as a **graph of stateful agents*
 
 ---
 
-## **3. Where does Model Context Protocol (MCP) fit in?**
+## **3. Where does  (ACP) fit in?**
 
-MCP is **internal to each agent’s interaction with its language model.**
+ACP is **internal to each agent’s interaction with its language model.**
 
 It governs:
 - **System prompt engineering** ("You are a Reflector agent…")
@@ -942,10 +942,10 @@ It governs:
 - **Memory injection** (e.g. "Your last action was XYZ.")
 - **Tool selection** ("You may call shell commands or use search.")
 
-Think of MCP as a **“thought scaffold”** for the agent—it defines its **context, personality, goals, and tools**.
+Think of ACP as a **“thought scaffold”** for the agent—it defines its **context, personality, goals, and tools**.
 
 Each agent has:
-- **An MCP (its private "mental model")**
+- **An ACP (its private "mental model")**
 - **An A2A protocol (its interface with other agents)**
 - **A vendor-agnostic LLM client (how it thinks)**
 
@@ -964,8 +964,8 @@ flowchart LR
   subgraph Agents
     R[Reflector] -.->|A2A| P[Prioritizer]
     P -->|A2A| S[Synthesizer]
-    S -->|MCP| B
-    P -->|MCP| B
+    S -->|ACP| B
+    P -->|ACP| B
   end
 
   B -->|LLM Call| R
@@ -979,10 +979,10 @@ To answer your question directly:
 
 > **Yes**, the agent layer *can and should be* vendor-agnostic via ports/adapters or DI.
 > The **A2A protocol** governs **inter-agent communication**.
-> The **MCP** governs **each agent’s mental context and prompt logic**, internally to the agent.
+> The **ACP** governs **each agent’s mental context and prompt logic**, internally to the agent.
 
 Would you like me to generate a reference `Agent` class structure that includes:
-- MCP injection
+- ACP injection
 - LLM abstraction
 - A2A communication hooks?<br>
 
@@ -1050,19 +1050,19 @@ class A2APort:
         raise NotImplementedError()
 
 class Agent:
-    def __init__(self, name: str, llm: LLMPort, comms: A2APort, mcp: dict):
+    def __init__(self, name: str, llm: LLMPort, comms: A2APort, ACP: dict):
         self.name = name
         self.llm = llm
         self.comms = comms
-        self.mcp = mcp
+        self.ACP = ACP
 
     def step(self, input_data: str):
         prompt = self._build_prompt(input_data)
-        output = self.llm.generate(prompt, system=self.mcp["system_prompt"])
+        output = self.llm.generate(prompt, system=self.ACP["system_prompt"])
         self._process_output(output)
 
     def _build_prompt(self, input_data: str) -> str:
-        return f"{self.mcp['context']}\n\nInput: {input_data}"
+        return f"{self.ACP['context']}\n\nInput: {input_data}"
 
     def _process_output(self, output: str):
         # Possibly send to other agents
@@ -1093,7 +1093,7 @@ The base architecture is now in place. Here’s what’s been implemented so far
 
 - **Agent Core:**
   - `Agent`: Self-contained, runs steps via an LLM and communicates with other agents
-  - Accepts `mcp` (Model Context Protocol) which includes:
+  - Accepts `ACP` () which includes:
     - `system_prompt`
     - optional `context`
     - optional `next_agent` (for message passing)
@@ -1158,7 +1158,7 @@ curl -X POST http://localhost:8000/run \
  -H "Content-Type: application/json" \
  -d '{
    "input_data": "What should I do today?",
-   "mcp": {
+   "ACP": {
      "name": "planner",
      "system_prompt": "You are a helpful planner agent.",
      "context": "",
@@ -1176,7 +1176,7 @@ curl -X POST http://localhost:8000/run \
 |---------------|-----------------------------------|
 | `Agent`       | Executes a step using the LLM     |
 | `LLMPort`     | Abstracts LiteLLM/OpenAI backend  |
-| `MCPConfig`   | Context passed with each step     |
+| `ACPConfig`   | Context passed with each step     |
 
 ### B. **Orchestration (LangGraph-style)**
 | Element       | Description                                       |
@@ -1217,8 +1217,8 @@ from pydantic import BaseModel
 
 # === Domain Models ===
 
-class MCPConfig(BaseModel):
-    """Model Context Protocol (MCP): Defines how agents interact"""
+class ACPConfig(BaseModel):
+    """ (ACP): Defines how agents interact"""
     name: str
     system_prompt: str
     context: Optional[str] = ""
@@ -1243,13 +1243,13 @@ class Agent:
     def __init__(self, llm: LLMPort):
         self.llm = llm
 
-    def step(self, input_data: str, mcp: MCPConfig) -> AgentResponse:
-        prompt = f"{mcp.context}\n\nUser: {input_data}"
-        output = self.llm.generate(prompt, system=mcp.system_prompt)
+    def step(self, input_data: str, ACP: ACPConfig) -> AgentResponse:
+        prompt = f"{ACP.context}\n\nUser: {input_data}"
+        output = self.llm.generate(prompt, system=ACP.system_prompt)
         return AgentResponse(
-            agent=mcp.name,
+            agent=ACP.name,
             response=output,
-            next=mcp.next_agents or []
+            next=ACP.next_agents or []
         )
 
 # === Orchestration Logic (LangGraph-style) ===
@@ -1262,9 +1262,9 @@ class AgentGraph:
     def register(self, name: str, agent: Agent):
         self.registry[name] = agent
 
-    def run(self, input_data: str, mcp: MCPConfig) -> List[AgentResponse]:
+    def run(self, input_data: str, ACP: ACPConfig) -> List[AgentResponse]:
         results = []
-        queue = [mcp]
+        queue = [ACP]
 
         while queue:
             current = queue.pop(0)
@@ -1276,13 +1276,13 @@ class AgentGraph:
             results.append(result)
 
             for next_name in result.next:
-                next_mcp = MCPConfig(
+                next_ACP = ACPConfig(
                     name=next_name,
                     system_prompt=current.system_prompt,
                     context=result.response,
                     next_agents=[]
                 )
-                queue.append(next_mcp)
+                queue.append(next_ACP)
 
         return results
 ```
@@ -1293,7 +1293,7 @@ class AgentGraph:
 
 | Concept        | Role                                                                 |
 |----------------|----------------------------------------------------------------------|
-| `MCPConfig`    | Holds the context and system prompt for each agent step              |
+| `ACPConfig`    | Holds the context and system prompt for each agent step              |
 | `Agent`        | Uses LLM port to generate a response based on prompt and context     |
 | `LLMPort`      | Abstract interface to any LLM (LiteLLM, Triton, etc.)                |
 | `AgentGraph`   | LangGraph-style orchestrator with sequential agent resolution logic  |
@@ -1318,7 +1318,7 @@ Here is the full **service layer code**, which acts as the middle tier between t
 
 ```python
 from typing import Dict, List, Optional
-from domain import Agent, AgentGraph, LLMPort, MCPConfig, AgentResponse
+from domain import Agent, AgentGraph, LLMPort, ACPConfig, AgentResponse
 
 
 # === Agent Orchestration Service ===
@@ -1339,25 +1339,25 @@ class AgentOrchestrationService:
         for name, llm in self.llm_providers.items():
             self.graph.register(name, Agent(llm=llm))
 
-    def run_agents(self, input_data: str, mcp: MCPConfig) -> List[AgentResponse]:
-        """Run an agent workflow from a root MCPConfig and input"""
-        return self.graph.run(input_data=input_data, mcp=mcp)
+    def run_agents(self, input_data: str, ACP: ACPConfig) -> List[AgentResponse]:
+        """Run an agent workflow from a root ACPConfig and input"""
+        return self.graph.run(input_data=input_data, ACP=ACP)
 
 
-# === MCP Template Service ===
+# === ACP Template Service ===
 
-class MCPTemplateService:
+class ACPTemplateService:
     """Provides default prompts and templates for known agents"""
 
     def __init__(self):
-        self.templates: Dict[str, MCPConfig] = {
-            "planner": MCPConfig(
+        self.templates: Dict[str, ACPConfig] = {
+            "planner": ACPConfig(
                 name="planner",
                 system_prompt="You are a strategic planning assistant. Break down tasks into subtasks.",
                 context="",
                 next_agents=["scheduler"]
             ),
-            "scheduler": MCPConfig(
+            "scheduler": ACPConfig(
                 name="scheduler",
                 system_prompt="You are a scheduling assistant. Create a realistic schedule based on task list.",
                 context="",
@@ -1366,7 +1366,7 @@ class MCPTemplateService:
             # Add additional agents here as needed
         }
 
-    def get_template(self, agent_name: str) -> Optional[MCPConfig]:
+    def get_template(self, agent_name: str) -> Optional[ACPConfig]:
         return self.templates.get(agent_name)
 
     def list_templates(self) -> List[str]:
@@ -1389,7 +1389,7 @@ class MockLLM(LLMPort):
 | Class                     | Purpose                                                                 |
 |--------------------------|-------------------------------------------------------------------------|
 | `AgentOrchestrationService` | Executes agent workflows and manages graph logic                      |
-| `MCPTemplateService`     | Stores reusable agent configuration templates (`MCPConfig`)             |
+| `ACPTemplateService`     | Stores reusable agent configuration templates (`ACPConfig`)             |
 | `MockLLM`                | Allows testing the agent pipeline without calling actual LLMs           |
 
 ---
@@ -1464,13 +1464,13 @@ I’ve provided the full **service** and **infrastructure** layers, plus abstrac
 ### **File Summaries**
 
 - **domain.py**
-  - `MCPConfig`, `AgentResponse`
+  - `ACPConfig`, `AgentResponse`
   - `LLMPort` (abstract)
   - `Agent` and `AgentGraph` for LangGraph-style orchestration
 
 - **service.py**
   - `AgentOrchestrationService` (glues graph + domain)
-  - `MCPTemplateService` (pre-defined agent prompts)
+  - `ACPTemplateService` (pre-defined agent prompts)
   - `MockLLM` stub for testing
 
 - **adapters.py**
@@ -1560,7 +1560,7 @@ Below is a **MECE, field-manual-style implementation plan** for building and dep
   - **AI-assist**: Generate Pydantic models and example requests.
 
 3.3. **SmolAgents Integration**
-  - Define each agent’s behavior in `smolagents/*.yaml` (tools, MCP, next_agents).
+  - Define each agent’s behavior in `smolagents/*.yaml` (tools, ACP, next_agents).
   - **AI-assist**: Flesh out system-prompts and tool definitions for each YAML.
 
 ---
@@ -1583,14 +1583,14 @@ Below is a **MECE, field-manual-style implementation plan** for building and dep
 
 ## 5. Domain & Service Wiring
 5.1. **Domain Layer**
-  - Copy `domain.py` with `Agent`, `LLMPort`, `AgentGraph`, `MCPConfig`.
+  - Copy `domain.py` with `Agent`, `LLMPort`, `AgentGraph`, `ACPConfig`.
 
 5.2. **Service Layer**
-  - Implement `AgentOrchestrationService` and `MCPTemplateService`.
+  - Implement `AgentOrchestrationService` and `ACPTemplateService`.
   - Register each agent name → corresponding LLM adapter instance.
 
 5.3. **AI-assist**
-  - Refine your MCP templates and default prompts by iterating with the chatbot until they “feel” aligned with your style and goals.
+  - Refine your ACP templates and default prompts by iterating with the chatbot until they “feel” aligned with your style and goals.
 
 ---
 
@@ -1603,7 +1603,7 @@ Below is a **MECE, field-manual-style implementation plan** for building and dep
 
 6.2. **Redis-Backed Workflow**
   - Switch to RedisA2APort; validate queue semantics (multiple consumers).
-  - Test DAG cycles, parallel branches (using sample MCPConfigs).
+  - Test DAG cycles, parallel branches (using sample ACPConfigs).
 
 6.3. **SmolAgents Pilot**
   - Trigger a simple SmolAgent YAML spec through your orchestrator.
@@ -1627,7 +1627,7 @@ Below is a **MECE, field-manual-style implementation plan** for building and dep
 ---
 
 ## 8. Agent Definition & Tuning
-8.1. **Populate `MCPTemplateService`**
+8.1. **Populate `ACPTemplateService`**
   - For all 8 agents, define `system_prompt`, `tools`, `next_agents` relationships.
 
 8.2. **SmolAgents YAML**
@@ -1635,7 +1635,7 @@ Below is a **MECE, field-manual-style implementation plan** for building and dep
 
 8.3. **Iterative Prompt Engineering**
   - With AI-assist, refine each agent’s system prompt and test with real tasks.
-  - Capture failure modes and revise MCP accordingly.
+  - Capture failure modes and revise ACP accordingly.
 
 ---
 
@@ -1669,7 +1669,7 @@ Below is a **MECE, field-manual-style implementation plan** for building and dep
 ---
 
 🔑 **Key Synergies & AI-Assistance Points**
-- **Prompt Engineering:** Iterate MCP templates with AI-chatbot
+- **Prompt Engineering:** Iterate ACP templates with AI-chatbot
 - **Config Validation:** Ask AI to sanity-check YAML & JSON configs
 - **Benchmark Tuning:** Leverage AI for quantization and TensorRT tips
 - **Test Case Generation:** Use AI to create edge-case tests
@@ -2149,7 +2149,7 @@ Here are several **high-leverage asks** you might not realize you can make, each
 
 ### 3. **SmolAgents YAML Generator**
 - **What to ask for:**
-  - A mini-script or notebook that, given an MCP template, auto-generates the corresponding SmolAgent YAML skeleton
+  - A mini-script or notebook that, given an ACP template, auto-generates the corresponding SmolAgent YAML skeleton
 - **Why it matters:**
   - Speeds up creating or updating your 8 agent specs in a consistent format
 
@@ -2190,7 +2190,7 @@ Here are several **high-leverage asks** you might not realize you can make, each
 
 ### 8. **Agent-Graph Visualization Tool**
 - **What to ask for:**
-  - A CLI script that reads your `MCPTemplateService` definitions and emits an up-to-date Mermaid or Graphviz graph automatically
+  - A CLI script that reads your `ACPTemplateService` definitions and emits an up-to-date Mermaid or Graphviz graph automatically
 - **Why it matters:**
   - Maintains clarity of your workflow as you add or refactor agents
 
@@ -2337,7 +2337,7 @@ Improve `scaffold_project.py` to read the directory spec from a YAML file under 
 **3.1-A (Test Prompt):**
 ```
 Write pytest tests in `tests/test_domain.py` that:
-- Import `AgentGraph`, `Agent`, and `MCPConfig`
+- Import `AgentGraph`, `Agent`, and `ACPConfig`
 - Register a dummy Agent that returns a known response
 - Run the graph and assert the returned trace matches expectations
 ```
@@ -2345,7 +2345,7 @@ Write pytest tests in `tests/test_domain.py` that:
 **3.1-B (Implementation Prompt):**
 ```
 Implement `domain.py` with:
-- `MCPConfig`, `AgentResponse`
+- `ACPConfig`, `AgentResponse`
 - Abstract `LLMPort`
 - `Agent` and `AgentGraph` per our prior spec
 Ensure it passes the tests.
@@ -2366,7 +2366,7 @@ Refactor `AgentGraph.run` to add logging of each step (agent name + timestamp) i
 ```
 Write tests in `tests/test_service.py` that:
 - Instantiate `AgentOrchestrationService` with a mock LLMPort
-- Ask for known templates via `MCPTemplateService`
+- Ask for known templates via `ACPTemplateService`
 - Run a short workflow and verify `AgentResponse` objects contain correct agent names
 ```
 
@@ -2374,13 +2374,13 @@ Write tests in `tests/test_service.py` that:
 ```
 Implement `service.py`:
 - `AgentOrchestrationService` bootstraps agents from a provider map
-- `MCPTemplateService` holds at least planner & scheduler templates
+- `ACPTemplateService` holds at least planner & scheduler templates
 Make sure tests pass.
 ```
 
 **4.1-C (Refactoring Prompt):**
 ```
-Add caching to `MCPTemplateService.get_template` (e.g. `functools.lru_cache`) and write a test to ensure subsequent calls are faster.
+Add caching to `ACPTemplateService.get_template` (e.g. `functools.lru_cache`) and write a test to ensure subsequent calls are faster.
 ```
 
 ---
@@ -2426,7 +2426,7 @@ Write pytest-asyncio tests in `tests/test_infra.py` that:
 ```
 Implement `infrastructure.py`:
 - FastAPI app with `/agents`, `/templates`, `/run`
-- Wire in `AgentOrchestrationService`, `MCPTemplateService`, `LiteLLMAdapter`, `InMemoryA2APort`
+- Wire in `AgentOrchestrationService`, `ACPTemplateService`, `LiteLLMAdapter`, `InMemoryA2APort`
 ```
 
 **6.1-C (Refactoring Prompt):**

@@ -21,7 +21,7 @@ The Watcher is a systems awareness and quality assurance agent. Its primary role
 - **Primary**: TinyLlama or Phi-2 (for rapid parsing, small context)
 - **Optional**: Mistral 7B Q4 for event correlation and system-wide pattern detection
 
-### **MCP (Model Context Protocol)**:
+### **ACP ()**:
 - Tracks:
   - System performance metrics
   - Anomaly detection logs

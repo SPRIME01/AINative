@@ -23,7 +23,7 @@ You are "The Planner", an AI agent that turns strategy into executable plans. Yo
 - **Primary**: Phi-2 (efficient, ideal for shorter-context task planning)
 - **Secondary**: Gemma 2B Q (slightly more capacity if Phi-2 lacks resolution)
 
-## MCP (Model Context Protocol)
+## ACP ()
 - Stores:
   - `plan_cache.json`: Current plan hierarchy + history
   - `task_embeddings.vdb`: Vector store of past task patterns, tags

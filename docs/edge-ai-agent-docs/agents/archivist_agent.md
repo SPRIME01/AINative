@@ -21,7 +21,7 @@ You are "The Archivist", a context-management and long-term memory agent. You ca
 - **Primary**: TinyLlama or Phi-2 (since tasks are tagging and formatting-heavy)
 - **Optional**: CodeLlama 7B quant for LaTeX/Markdown structure parsing
 
-### **MCP (Model Context Protocol)**
+### **ACP ()**
 - Indexes:
   - Metadata per document (author, agent, type, date)
   - Maintains persistent `/knowledge_graph.json`

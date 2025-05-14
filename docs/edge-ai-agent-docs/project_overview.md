@@ -14,7 +14,7 @@ The project operates within the context of edge AI, where computational resource
 ## Structure
 The project is organized into several key components:
 - **Agents**: Each agent has a specific role and set of responsibilities, documented in individual files. These include the Strategist, Builder, Planner, Critic, Synthesizer, Archivist, and Watcher agents.
-- **Concepts**: This section covers foundational concepts such as the Model Context Protocol and runtime optimization strategies that underpin the functionality of the agents.
+- **Concepts**: This section covers foundational concepts such as the  and runtime optimization strategies that underpin the functionality of the agents.
 - **Usage**: Guides for daily and weekly routines provide users with structured approaches to interacting with the agents and maximizing their effectiveness.
 - **Architecture**: An overview of the system architecture illustrates how the agents interact and the relationships between them.
 

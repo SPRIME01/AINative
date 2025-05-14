@@ -152,16 +152,16 @@ message = {
 }
 ```
 
-## Model Context Protocol (MCP)
+##  (ACP)
 
-Each agent implements a Model Context Protocol (MCP) that defines:
+Each agent implements a  (ACP) that defines:
 
 - **Input pruning**: What gets passed into the context window per call
 - **Summarization strategy**: How to handle long-term memory
 - **Embedding usage**: Vector search for memory recall
 - **Protocol structure**: Storage of intermediate or long-term state
 
-The MCP is essential for edge AI, optimizing the limited context windows of quantized models while maintaining persistent intelligence across sessions.
+The ACP is essential for edge AI, optimizing the limited context windows of quantized models while maintaining persistent intelligence across sessions.
 
 ## Core System Agents
 
@@ -183,7 +183,7 @@ The Edge AI Agent System includes eight core system agents:
 - **Primary**: Nous Hermes 2 - Mistral 7B Q5_K_M
 - **Fallback**: Mistral-Instruct 7B Q4_K_M
 
-**MCP**:
+**ACP**:
 - Maintains a strategic context window with long-term goals
 - Summarizes past decisions and rationale
 - Uses embeddings to recall relevant past strategies
@@ -205,7 +205,7 @@ The Edge AI Agent System includes eight core system agents:
 - **Primary**: Code LLaMA 7B Q5_K_M
 - **Fallback**: DeepSeek Coder 6.7B
 
-**MCP**:
+**ACP**:
 - Stores build context per project
 - Embeds and indexes past solutions
 - Surfaces reusable components during planning
@@ -227,7 +227,7 @@ The Edge AI Agent System includes eight core system agents:
 - **Primary**: Phi-2
 - **Secondary**: Gemma 2B Q
 
-**MCP**:
+**ACP**:
 - Stores plan hierarchy and history
 - Maintains task embeddings for pattern recognition
 - Summarizes progress logs weekly
@@ -248,7 +248,7 @@ The Edge AI Agent System includes eight core system agents:
 - **Primary**: OpenOrca Mistral 7B Q4_K_M
 - **Secondary**: LLaMA 2 7B Q4_0
 
-**MCP**:
+**ACP**:
 - Maintains a risk matrix
 - Stores past critiques to avoid repetition
 - Tracks resolution of identified issues
@@ -270,7 +270,7 @@ The Edge AI Agent System includes eight core system agents:
 - **Primary**: Mistral 7B / Yi 6B
 - **Secondary**: OpenHermes Mistral Q5_K_S
 
-**MCP**:
+**ACP**:
 - Maintains themes and topics across sessions
 - Uses slide-window summarization for long inputs
 - Creates progressive abstractions
@@ -292,7 +292,7 @@ The Edge AI Agent System includes eight core system agents:
 - **Primary**: TinyLlama or Phi-2
 - **Optional**: CodeLlama 7B for structure parsing
 
-**MCP**:
+**ACP**:
 - Indexes metadata per document
 - Maintains persistent knowledge graph
 - Controls input window using timestamped filters
@@ -314,7 +314,7 @@ The Edge AI Agent System includes eight core system agents:
 - **Primary**: CodeLLaMA 7B / DeepSeek
 - **Secondary**: Mistral instruct for non-code logic
 
-**MCP**:
+**ACP**:
 - Tracks build history and diffs
 - Maintains vector DB for common patterns
 - Updates knowledge base with each build
@@ -336,7 +336,7 @@ The Edge AI Agent System includes eight core system agents:
 - **Primary**: Phi-2 / Mistral 7B
 - **Fallback**: GPT4ALL Falcon Q4_0
 
-**MCP**:
+**ACP**:
 - Maintains sliding window of system metrics
 - Tracks baseline performance
 - Summarizes log patterns hourly/daily
@@ -455,7 +455,7 @@ Agents typically interact with a structured directory system:
 ## Best Practices
 
 1. Match agent LLM models to their specific task requirements
-2. Optimize context usage through effective MCP implementation
+2. Optimize context usage through effective ACP implementation
 3. Use appropriate communication patterns for different agent interactions
 4. Implement proper error handling and recovery mechanisms
 5. Monitor agent performance and resource usage

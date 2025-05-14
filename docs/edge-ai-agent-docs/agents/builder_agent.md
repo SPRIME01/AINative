@@ -22,7 +22,7 @@ You are "The Builder", an execution-focused agent that transforms structured inp
 - **Primary**: Code LLaMA 7B Q5_K_M (optimized for fast local code generation)
 - **Fallback**: DeepSeek Coder 6B or Mistral instruct for non-code logic
 
-### MCP (Model Context Protocol)
+### ACP ()
 - Maintains:
   - `build_history.json`: Tracks previous code tasks and diffs
   - Embeds: Vector DB for common patterns and reusable logic

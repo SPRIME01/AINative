@@ -17,7 +17,7 @@ This document provides detailed technical implementation guidance for the Edge A
     - [Message Format](#message-format)
     - [Routing Patterns](#routing-patterns)
     - [Communication Methods](#communication-methods)
-  - [🧠 Model Context Protocol (MCP)](#-model-context-protocol-mcp)
+  - [🧠  (ACP)](#-model-context-protocol-ACP)
     - [Context Management](#context-management)
     - [Memory Strategies](#memory-strategies)
     - [Prompt Engineering](#prompt-engineering)
@@ -606,9 +606,9 @@ for alert in alerts_redis:
 
 ---
 
-## 🧠 Model Context Protocol (MCP)
+## 🧠  (ACP)
 
-The Model Context Protocol (MCP) defines how agents manage their context window and persistent memory across sessions.
+The  (ACP) defines how agents manage their context window and persistent memory across sessions.
 
 ### Context Management
 
@@ -622,7 +622,7 @@ Key strategies for context management:
 Implementation example:
 
 ```python
-class MCPContextManager:
+class ACPContextManager:
     """Manages context for agent LLM interactions."""
 
     def __init__(self, max_tokens: int = 4096, buffer_tokens: int = 512):

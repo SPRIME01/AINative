@@ -1,10 +1,10 @@
-# Model Context Protocol (MCP) in Edge AI Agent System
+# Agent Context Protocol (ACP) in Edge AI Agent System
 
 ## Overview
 
-The Model Context Protocol (MCP) is a structured methodology for managing context windows, memory, and state persistence across agent operations in the Edge AI Agent System. It addresses the challenges of working with quantized models on edge hardware, where context windows are often limited, while ensuring consistent and intelligent agent behavior across sessions.
+The Agent Context Protocol (ACP) is a structured methodology for managing context windows, memory, and state persistence across agent operations in the Edge AI Agent System. It addresses the challenges of working with quantized models on edge hardware, where context windows are often limited, while ensuring consistent and intelligent agent behavior across sessions.
 
-MCP is essential for edge AI deployments because:
+ACP is essential for edge AI deployments because:
 - Quantized models typically have smaller context windows (2k-8k tokens)
 - Edge applications require persistent intelligence across sessions
 - Memory usage must be optimized for resource-constrained environments
@@ -193,8 +193,8 @@ Protocol structure defines the format and organization of memory storage:
 
 Example implementation:
 ```python
-class MCPMemoryManager:
-    """Manages different memory types according to MCP structure."""
+class ACPMemoryManager:
+    """Manages different memory types according to ACP structure."""
 
     def __init__(self, agent_id: str):
         self.agent_id = agent_id
@@ -261,16 +261,16 @@ class MCPMemoryManager:
         return existing.get("version", 0) + 1
 ```
 
-## Agent-Specific MCP Examples
+## Agent-Specific ACP Examples
 
-Different agents use specialized MCP configurations based on their roles and needs:
+Different agents use specialized ACP configurations based on their roles and needs:
 
-### Strategist Agent MCP
+### Strategist Agent ACP
 
 ```python
-class StrategistMCP:
+class StrategistACP:
     def __init__(self, agent_id: str):
-        self.memory_manager = MCPMemoryManager(agent_id)
+        self.memory_manager = ACPMemoryManager(agent_id)
         self.goal_tracker = GoalTracker(agent_id)
 
     def prepare_context(self, query: str, project_id: str = None) -> Dict[str, Any]:
@@ -314,12 +314,12 @@ class StrategistMCP:
         self.memory_manager.store_summary(f"strategy_{project_id}", updated_summary)
 ```
 
-### Builder Agent MCP
+### Builder Agent ACP
 
 ```python
-class BuilderMCP:
+class BuilderACP:
     def __init__(self, agent_id: str):
-        self.memory_manager = MCPMemoryManager(agent_id)
+        self.memory_manager = ACPMemoryManager(agent_id)
         self.code_memory = CodeMemory(agent_id)
 
     def prepare_context(self, query: str, code_files: List[str] = None) -> Dict[str, Any]:
@@ -364,12 +364,12 @@ class BuilderMCP:
             )
 ```
 
-### Archivist Agent MCP
+### Archivist Agent ACP
 
 ```python
-class ArchivistMCP:
+class ArchivistACP:
     def __init__(self, agent_id: str):
-        self.memory_manager = MCPMemoryManager(agent_id)
+        self.memory_manager = ACPMemoryManager(agent_id)
         self.knowledge_graph = KnowledgeGraph(agent_id)
 
     def prepare_context(self, query: str) -> Dict[str, Any]:
@@ -418,7 +418,7 @@ class ArchivistMCP:
             )
 ```
 
-## MCP Implementation Guidelines
+## ACP Implementation Guidelines
 
 ### Memory Tiers
 
@@ -480,12 +480,12 @@ Maintain relevant and accurate memory:
    - Merge related memories
    - Prune redundant information
 
-## MCP Configuration Templates
+## ACP Configuration Templates
 
-### Basic MCP Configuration
+### Basic ACP Configuration
 
 ```yaml
-mcp:
+ACP:
   agent_id: "example_agent"
   token_budget: 2048
 
@@ -529,10 +529,10 @@ mcp:
       summaries: 5
 ```
 
-### Strategist MCP Configuration
+### Strategist ACP Configuration
 
 ```yaml
-mcp:
+ACP:
   agent_id: "strategist"
   token_budget: 4096
 
@@ -577,10 +577,10 @@ mcp:
       relevant_memories: 5
 ```
 
-### Builder MCP Configuration
+### Builder ACP Configuration
 
 ```yaml
-mcp:
+ACP:
   agent_id: "builder"
   token_budget: 4096
 
@@ -669,17 +669,17 @@ mcp:
    - Measure performance impact of changes
 
 2. **Agent-Specific Optimization**
-   - Tailor MCP to each agent's role
+   - Tailor ACP to each agent's role
    - Allocate more context to complex reasoning tasks
    - Use lighter context for routine tasks
 
 3. **Continuous Improvement**
    - Monitor agent performance
    - Identify memory-related bottlenecks
-   - Refine MCP based on real-world usage
+   - Refine ACP based on real-world usage
 
 ## Conclusion
 
-The Model Context Protocol (MCP) is a critical component of the Edge AI Agent System, enabling effective management of context, memory, and state across agent operations despite the constraints of edge hardware. By implementing a well-designed MCP, agents can maintain continuity of understanding, utilize their limited context windows efficiently, and deliver more coherent and intelligent responses.
+The Agent Context Protocol (ACP) is a critical component of the Edge AI Agent System, enabling effective management of context, memory, and state across agent operations despite the constraints of edge hardware. By implementing a well-designed ACP, agents can maintain continuity of understanding, utilize their limited context windows efficiently, and deliver more coherent and intelligent responses.
 
-The structured approach to input pruning, summarization, embedding usage, and protocol structure allows for a flexible yet consistent memory management system that adapts to the needs of different agent types while optimizing resource usage. As the Edge AI Agent System evolves, the MCP should continue to be refined to incorporate new techniques and address emerging challenges in context management for edge AI applications.
+The structured approach to input pruning, summarization, embedding usage, and protocol structure allows for a flexible yet consistent memory management system that adapts to the needs of different agent types while optimizing resource usage. As the Edge AI Agent System evolves, the ACP should continue to be refined to incorporate new techniques and address emerging challenges in context management for edge AI applications.

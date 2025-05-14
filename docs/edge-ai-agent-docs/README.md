@@ -33,8 +33,8 @@ The primary goal of this project is to leverage edge AI technology to facilitate
    - Watcher Agent: `agents/watcher_agent.md`
 
 3. **Understand Key Concepts**
-   Read the `concepts` directory files to grasp essential concepts such as the Model Context Protocol and runtime optimization strategies:
-   - Model Context Protocol: `concepts/model_context_protocol.md`
+   Read the `concepts` directory files to grasp essential concepts such as the  and runtime optimization strategies:
+   - : `concepts/model_context_protocol.md`
    - Runtime Optimization: `concepts/runtime_optimization.md`
 
 4. **Follow Usage Guidelines**
