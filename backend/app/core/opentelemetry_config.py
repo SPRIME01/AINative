@@ -72,6 +72,11 @@ def setup_opentelemetry(app: FastAPI) -> None:
         logger.info("Application is already instrumented with OpenTelemetry")
         return
 
+    # Ensure the propagator is set for context propagation
+    from opentelemetry.propagate import set_global_textmap
+    from opentelemetry.trace.propagation.tracecontext import TraceContextTextMapPropagator
+    set_global_textmap(TraceContextTextMapPropagator())
+
     # Get service name from environment or use default
     service_name = os.environ.get("OTEL_SERVICE_NAME", "ainative-backend")
 
@@ -91,8 +96,16 @@ def setup_opentelemetry(app: FastAPI) -> None:
     # Setup logging if endpoint is configured
     _setup_logging(resource)
 
-    # Instrument FastAPI
-    FastAPIInstrumentor.instrument_app(app)
+    # Instrument FastAPI with trace context propagation
+    # Note: enable_response_header_propagation is not supported in the current version
+    # Instead, we use record_exception_as_span_event=True which is a supported parameter
+    FastAPIInstrumentor.instrument_app(
+        app,
+        tracer_provider=trace.get_tracer_provider(),
+        excluded_urls="health,metrics",
+        # Configure to record exceptions as span events for better observability
+        record_exception_as_span_event=True
+    )
 
     # Mark as instrumented to avoid re-instrumentation
     app._is_instrumented_by_otel = True
