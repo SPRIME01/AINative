@@ -52,7 +52,7 @@ This quick reference guide provides an at-a-glance summary of the Edge AI Agent 
 - **Grounding**: Created using cognitive and intellectual artifacts
 - **Assignment**: Can be assigned to projects, tasks, artifacts
 
-###  (ACP)
+###  Agent Context Protocol (ACP)
 
 - **Input Pruning**: Selecting relevant information for context windows
 - **Summarization**: Condensing information for long-term retention

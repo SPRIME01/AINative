@@ -17,7 +17,7 @@ This document provides detailed technical implementation guidance for the Edge A
     - [Message Format](#message-format)
     - [Routing Patterns](#routing-patterns)
     - [Communication Methods](#communication-methods)
-  - [🧠  (ACP)](#-model-context-protocol-ACP)
+  - [🧠  Agent Context Protocol (ACP)](#-model-context-protocol-ACP)
     - [Context Management](#context-management)
     - [Memory Strategies](#memory-strategies)
     - [Prompt Engineering](#prompt-engineering)
@@ -606,9 +606,9 @@ for alert in alerts_redis:
 
 ---
 
-## 🧠  (ACP)
+## 🧠  Agent Context Protocol (ACP)
 
-The  (ACP) defines how agents manage their context window and persistent memory across sessions.
+The  Agent Context Protocol (ACP) defines how agents manage their context window and persistent memory across sessions.
 
 ### Context Management
 

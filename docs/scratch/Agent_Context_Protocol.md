@@ -1,8 +1,8 @@
-# Agent Context Protocol (ACP) in Edge AI Agent System
+# Agent Context Protocol Agent Context Protocol (ACP) in Edge AI Agent System
 
 ## Overview
 
-The Agent Context Protocol (ACP) is a structured methodology for managing context windows, memory, and state persistence across agent operations in the Edge AI Agent System. It addresses the challenges of working with quantized models on edge hardware, where context windows are often limited, while ensuring consistent and intelligent agent behavior across sessions.
+The Agent Context Protocol Agent Context Protocol (ACP) is a structured methodology for managing context windows, memory, and state persistence across agent operations in the Edge AI Agent System. It addresses the challenges of working with quantized models on edge hardware, where context windows are often limited, while ensuring consistent and intelligent agent behavior across sessions.
 
 ACP is essential for edge AI deployments because:
 - Quantized models typically have smaller context windows (2k-8k tokens)
@@ -680,6 +680,6 @@ ACP:
 
 ## Conclusion
 
-The Agent Context Protocol (ACP) is a critical component of the Edge AI Agent System, enabling effective management of context, memory, and state across agent operations despite the constraints of edge hardware. By implementing a well-designed ACP, agents can maintain continuity of understanding, utilize their limited context windows efficiently, and deliver more coherent and intelligent responses.
+The Agent Context Protocol Agent Context Protocol (ACP) is a critical component of the Edge AI Agent System, enabling effective management of context, memory, and state across agent operations despite the constraints of edge hardware. By implementing a well-designed ACP, agents can maintain continuity of understanding, utilize their limited context windows efficiently, and deliver more coherent and intelligent responses.
 
 The structured approach to input pruning, summarization, embedding usage, and protocol structure allows for a flexible yet consistent memory management system that adapts to the needs of different agent types while optimizing resource usage. As the Edge AI Agent System evolves, the ACP should continue to be refined to incorporate new techniques and address emerging challenges in context management for edge AI applications.

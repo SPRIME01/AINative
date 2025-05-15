@@ -163,7 +163,7 @@ Would you like a Mermaid diagram of this schedule or a code scaffold to orchestr
 
 ### **Improved Prompt:**
 
-> Given the edge deployment constraints of a Jetson AGX Orin 64GB Dev Kit and my intention to build a local team of quantized LLM-powered agents, define the **system prompts**, **tools**, **capabilities**, and any memory/context planning (ACP) configurations** for each of the previously defined agents. These agents should be optimized for performance, clarity of role, and efficient local resource usage. Provide detailed specifications for two agents at a time. Include:
+> Given the edge deployment constraints of a Jetson AGX Orin 64GB Dev Kit and my intention to build a local team of quantized LLM-powered agents, define the **system prompts**, **tools**, **capabilities**, and any memory/context planning Agent Context Protocol (ACP) configurations** for each of the previously defined agents. These agents should be optimized for performance, clarity of role, and efficient local resource usage. Provide detailed specifications for two agents at a time. Include:
 > - Agent Name and Role Summary
 > - System Prompt (MECE, role-specific, minimal hallucination risk)
 > - Tooling (files, APIs, scripts, agents, functions, vector DBs, etc.)
@@ -534,7 +534,7 @@ Excellent. With your interest in A2A communication, lightweight compositional fr
 │ └───────────────────────────────────────────────────────────────────┘ │
 │                                                                       │
 │ ┌───────────────────────────────────────────────────────────────────┐ │
-│ │                     Agent Memory and Context (ACP)                │ │
+│ │                     Agent Memory and Context Agent Context Protocol (ACP)                │ │
 │ │ - Per-agent context files (YAML + embeddings + system logs)      │ │
 │ │ - Shared memory db: SQLite, Weaviate, or Chroma                  │ │
 │ │ - Embedding index: for retrieval-based memory (via Synthesizer) │ │
@@ -884,7 +884,7 @@ Would you like me to now:
 **or**
 - Build a **Bash/Python deployment script** that launches Ollama, Triton, and LiteLLM with checks?<br>
 
-<i>[5/8/2025, 8:51:28 PM]</i> 👉 <b>👤 User</b>: Is the agent layer vendor neural and agnostic , maybe using ports and adapters, depency injection etc. does the A2A protocol come into play there? Where does  (ACP) fit in?<br>
+<i>[5/8/2025, 8:51:28 PM]</i> 👉 <b>👤 User</b>: Is the agent layer vendor neural and agnostic , maybe using ports and adapters, depency injection etc. does the A2A protocol come into play there? Where does  Agent Context Protocol (ACP) fit in?<br>
 <i>[5/8/2025, 8:51:28 PM]</i> 👉 <b>🤖 Assistant</b>:
 
 You're asking the right questions to build a robust, extensible architecture. Let’s break it down clearly and structurally so you can design your agent layer to be:
@@ -932,7 +932,7 @@ For a LangGraph-style setup, you’d model this as a **graph of stateful agents*
 
 ---
 
-## **3. Where does  (ACP) fit in?**
+## **3. Where does  Agent Context Protocol (ACP) fit in?**
 
 ACP is **internal to each agent’s interaction with its language model.**
 
@@ -1218,7 +1218,7 @@ from pydantic import BaseModel
 # === Domain Models ===
 
 class ACPConfig(BaseModel):
-    """ (ACP): Defines how agents interact"""
+    """ Agent Context Protocol (ACP): Defines how agents interact"""
     name: str
     system_prompt: str
     context: Optional[str] = ""

@@ -21,7 +21,7 @@ You are "The Critic", an adversarial reasoning agent whose job is to improve out
 - **Primary**: Mistral 7B Q5_K_M (superior reasoning and critique ability)
 - **Fallback**: DeepSeek 1.3B or LLaMA 3 8B quantized (if local)
 
-### Agent Context Protocol (ACP)
+### Agent Context Protocol Agent Context Protocol (ACP)
 - Maintains:
   - `critique_embeddings.vdb`: Vector search for common logic gaps, design errors
   - Uses `rule_checklist.yaml` as an evolving prompt modifier

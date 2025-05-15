@@ -1,7 +1,7 @@
 #
 
 ## Overview
-The  (ACP) is a structured method by which agents manage their context windows and persistent memory. It is essential for ensuring that agents can effectively summarize, retrieve, and reference previous information across sessions, particularly in edge AI environments where resource constraints are a significant consideration.
+The  Agent Context Protocol (ACP) is a structured method by which agents manage their context windows and persistent memory. It is essential for ensuring that agents can effectively summarize, retrieve, and reference previous information across sessions, particularly in edge AI environments where resource constraints are a significant consideration.
 
 ## Importance
 ACP is crucial for maintaining the efficiency and effectiveness of AI agents, especially when operating on devices with limited computational resources. By optimizing how context is handled, agents can provide more relevant outputs while minimizing memory usage.

@@ -152,9 +152,9 @@ message = {
 }
 ```
 
-##  (ACP)
+##  Agent Context Protocol (ACP)
 
-Each agent implements a  (ACP) that defines:
+Each agent implements a  Agent Context Protocol (ACP) that defines:
 
 - **Input pruning**: What gets passed into the context window per call
 - **Summarization strategy**: How to handle long-term memory
