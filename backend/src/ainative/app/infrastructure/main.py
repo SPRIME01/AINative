@@ -1,12 +1,26 @@
 import logging
 from typing import Any
 
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException, Request, status
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
+from fastapi.exceptions import RequestValidationError
+from ainative.app.infrastructure.api.route_handler import router as agent_router, ErrorResponse
 
 # Configure basic logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+# Define HTTP reason phrases
+HTTP_REASON_PHRASES = {
+    400: "Bad Request",
+    401: "Unauthorized",
+    403: "Forbidden",
+    404: "Not Found",
+    422: "Unprocessable Entity",
+    500: "Internal Server Error",
+    # Add other status codes as needed
+}
 
 app = FastAPI(
     title="Edge AI Orchestrator API",
@@ -31,6 +45,57 @@ app.add_middleware(
     allow_methods=["*"],  # Allows all methods (GET, POST, PUT, etc.)
     allow_headers=["*"],  # Allows all headers
 )
+
+
+# Exception handler for Problem Details format
+@app.exception_handler(HTTPException)
+async def http_exception_handler(request: Request, exc: HTTPException) -> JSONResponse:
+    """
+    Convert HTTP exceptions to Problem Details format (RFC 7807).
+
+    Args:
+        request: The request that caused the exception
+        exc: The raised HTTPException
+
+    Returns:
+        JSONResponse: A response formatted according to RFC 7807
+    """
+    error = ErrorResponse(
+        type=f"https://ainative.dev/errors/{exc.status_code}",
+        title=HTTP_REASON_PHRASES.get(exc.status_code, "Error"),
+        status=exc.status_code,
+        detail=str(exc.detail),
+        instance=request.url.path
+    )
+    return JSONResponse(status_code=exc.status_code, content=error.model_dump())
+
+
+# Add validation error handler
+@app.exception_handler(RequestValidationError)
+async def validation_exception_handler(request: Request, exc: RequestValidationError) -> JSONResponse:
+    """
+    Convert validation errors to Problem Details format (RFC 7807).
+
+    Args:
+        request: The request that caused the validation error
+        exc: The raised RequestValidationError
+
+    Returns:
+        JSONResponse: A response formatted according to RFC 7807
+    """
+    errors = exc.errors()
+    error = ErrorResponse(
+        type="https://ainative.dev/errors/validation",
+        title="Validation Error",
+        status=status.HTTP_422_UNPROCESSABLE_ENTITY,
+        detail="One or more validation errors occurred.",
+        instance=request.url.path,
+        validation_errors=errors
+    )
+    return JSONResponse(
+        status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+        content=error.model_dump()
+    )
 
 
 @app.on_event("startup")
@@ -105,10 +170,8 @@ async def metrics() -> Any:
     }
 
 
-# Example of a simple agent-related endpoint (illustrative)
-# You would typically define your routers in other files and include them here
-# from ..service import agent_router  # Example import
-# app.include_router(agent_router.router, prefix="/agents", tags=["Agents"])
+# Include routers
+app.include_router(agent_router)
 
 if __name__ == "__main__":
     import uvicorn
