@@ -4,9 +4,9 @@ from fastapi import FastAPI
 # If your endpoints directory is directly under 'app', this should work.
 # Adjust if your 'api' directory is structured differently.
 from app.api.endpoints import logging as logging_api
-from app.core.logging_config import setup_logging # Assuming you have this for backend logging setup
+from app.config.logging_config import setup_logging # Assuming you have this for backend logging setup
 # Import other routers and configurations as needed
-from ainative.app.core.opentelemetry_config import setup_opentelemetry # OpenTelemetry setup
+from ainative.app.config.opentelemetry_config import setup_opentelemetry # OpenTelemetry setup
 
 # Example: Initialize backend logging
 # This should ideally be called once when the application starts.
